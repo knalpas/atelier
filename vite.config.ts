@@ -4,4 +4,6 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // GitHub Pages serves from https://<user>.github.io/<repo>/
+  base: process.env.VITE_BASE ?? '/lineage/',
 })
