@@ -8,8 +8,8 @@ import { Timeline } from './components/Timeline'
 
 const ERA_PRESETS = [
   { id: 'all', label: 'All eras', min: 0, max: 3000 },
-  { id: 'renaissance', label: 'Renaissance', min: 1260, max: 1600 },
-  { id: 'baroque', label: 'Baroque', min: 1570, max: 1750 },
+  { id: 'renaissance', label: 'Renaissance', min: 1260, max: 1565 },
+  { id: 'baroque', label: 'Baroque', min: 1565, max: 1750 },
   { id: 'modern', label: 'Modern turn', min: 1780, max: 1920 },
   { id: '20c', label: '20th century', min: 1880, max: 2000 },
 ] as const
