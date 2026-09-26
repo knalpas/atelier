@@ -1,28 +1,42 @@
-# LINEAGE
+# Lineage
 
-A mobile-friendly atlas of historical relationships between painters and modernist artists.
+A museum-style family tree of painting: 77 artists from Giotto to Basquiat, arranged in six gallery rooms, each with its own wall colour.
 
-Explore **movements**, **origins**, **lifespans**, and **connections** (mentors, rivals, collaborators, friends, shared circles).
+**Live site:** https://knalpas.github.io/lineage/
 
-## Run locally
+Every artist card shows:
+
+- their **movement**, **lifespan** and **birthplace**
+- a small timeline bar placing their life across seven centuries
+- who **trained** them, whom they **mentored**, their **partners**, **collaborators**, **friends** and **rivals**, and who they **inspired** or were **inspired by**
+- short stories behind the key relationships
+
+Tap any name to jump to that artist. A "Back to…" button returns you to where you were.
+
+Two overview sections follow the rooms:
+
+- **Who lived when**: every lifetime on one chart. Hover or tap a bar to light up that artist's connections.
+- **Where they were born**: a map of Europe and the world, plus a list by country.
+
+On phones, each room becomes a swipeable carousel.
+
+## Develop
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open the URL Vite prints (usually `http://localhost:5173`).
-
-## Build
+## Deploy to GitHub Pages
 
 ```bash
-npm run build
-npm run preview
+npm run deploy
 ```
 
-## What’s included
+This builds the site and pushes `dist/` to the `gh-pages` branch.
 
-- Interactive network laid out by era (left → right) and movement (bands)
-- Filters for era presets, movement, country/origin, and search
-- Artist detail panel with lifespan, birthplace, movement, and linked figures
-- Horizontal timeline for quick era browsing
+## Data
+
+- Artists and relationships: `src/data/artists.ts` (relationships are stored one way; the reverse links are derived automatically)
+- Rooms and palettes: `src/data/rooms.ts`
+- Portraits: `npm run portraits` downloads each artist's lead image from Wikimedia Commons (public domain or Creative Commons) and converts it to WebP

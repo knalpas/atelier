@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "portraits": "node scripts/fetch-portraits.mjs && node scripts/optimize-portraits.mjs",
+    "deploy": "npm run build && gh-pages -d dist --dotfiles -m \"Deploy site\""
   },
   "dependencies": {
     "d3-geo": "^3.1.1",

@@ -39,7 +39,7 @@ function pack(ppy: number): { placed: Placed[]; lanes: number } {
 export function LifespanChart() {
   const wrapRef = useRef<HTMLDivElement>(null)
   const [width, setWidth] = useState(1000)
-  const [focus, setFocus] = useState<string | null>('picasso')
+  const [focus, setFocus] = useState<string | null>(null)
   const { jumpTo } = useNavigation()
 
   useEffect(() => {
@@ -75,7 +75,11 @@ export function LifespanChart() {
 
       <div className="chart" ref={wrapRef}>
         <div className="chart__scroll">
-          <div className="chart__canvas" style={{ width: innerW, height }}>
+          <div
+            className="chart__canvas"
+            style={{ width: innerW, height }}
+            onMouseLeave={() => setFocus(null)}
+          >
             {centuries.map((y) => (
               <div
                 key={y}
