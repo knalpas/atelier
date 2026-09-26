@@ -98,10 +98,29 @@ img {
 .hero {
   min-height: 100svh;
   display: grid;
-  align-content: center;
+  align-content: end;
   gap: 1.5rem;
-  padding: 4.5rem 0 3rem;
+  padding: 4.5rem 0 3.5rem;
   position: relative;
+  overflow: hidden;
+}
+
+.hero-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-stage svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+}
+
+.hero > *:not(.hero-stage) {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-brand {
@@ -183,41 +202,6 @@ img {
   border-color: var(--ink);
 }
 
-.hero-visual {
-  position: absolute;
-  inset: auto 0 8% auto;
-  width: min(42vw, 420px);
-  height: min(42vw, 420px);
-  pointer-events: none;
-  opacity: 0.9;
-}
-
-.hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(0.5px);
-}
-
-.hero-orb-a {
-  inset: 12% 18% auto auto;
-  width: 58%;
-  height: 58%;
-  background: radial-gradient(circle at 30% 30%, rgba(11, 107, 110, 0.55), transparent 70%);
-}
-
-.hero-orb-b {
-  inset: auto auto 8% 8%;
-  width: 70%;
-  height: 70%;
-  background: radial-gradient(circle at 60% 40%, rgba(31, 79, 143, 0.4), transparent 68%);
-}
-
-.hero-orb-c {
-  inset: 35% 35% auto auto;
-  width: 28%;
-  height: 28%;
-  background: radial-gradient(circle at 50% 50%, rgba(181, 74, 42, 0.45), transparent 70%);
-}
 
 .explorer {
   display: grid;
@@ -306,8 +290,8 @@ img {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.4);
   color: var(--ink-soft);
-  border-radius: 999px;
-  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius);
+  padding: 0.5rem 0.9rem;
   font-size: 0.85rem;
   font-weight: 600;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -619,17 +603,13 @@ img {
   }
 
   .hero {
-    min-height: auto;
-    padding: 3.5rem 0 2.5rem;
+    min-height: 100svh;
+    align-content: end;
+    padding: 5.5rem 0 2.5rem;
   }
 
-  .hero-visual {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    height: 180px;
-    margin-top: 0.5rem;
-    opacity: 0.85;
+  .hero-stage svg {
+    opacity: 0.4;
   }
 
   .graph-wrap {
