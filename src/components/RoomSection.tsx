@@ -1,0 +1,45 @@
+import type { CSSProperties } from 'react'
+import type { Room } from '../types'
+import type { GalleryArtist } from '../data/graph'
+import { ArtistCard } from './ArtistCard'
+
+interface RoomSectionProps {
+  room: Room
+  artists: GalleryArtist[]
+}
+
+export function RoomSection({ room, artists }: RoomSectionProps) {
+  const style = {
+    '--wall': room.wall,
+    '--ink': room.ink,
+    '--muted': room.muted,
+    '--accent': room.accent,
+  } as CSSProperties
+
+  const movements = room.movements.filter((m) => artists.some((a) => a.movement === m))
+
+  return (
+    <section id={`room-${room.id}`} className="room" style={style} data-room={room.id}>
+      <header className="room__header">
+        <p className="room__numeral">Room {room.numeral}</p>
+        <h2 className="room__title">{room.title}</h2>
+        <p className="room__span">{room.span}</p>
+        <p className="room__intro">{room.intro}</p>
+        <ul className="room__movements" aria-label="Movements in this room">
+          {movements.map((m) => (
+            <li key={m}>{m}</li>
+          ))}
+        </ul>
+      </header>
+
+      <p className="room__swipe" aria-hidden="true">
+        {artists.length} artists · swipe <span>→</span>
+      </p>
+      <div className="room__track">
+        {artists.map((artist, i) => (
+          <ArtistCard key={artist.id} artist={artist} index={i} total={artists.length} />
+        ))}
+      </div>
+    </section>
+  )
+}

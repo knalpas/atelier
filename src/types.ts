@@ -1,33 +1,44 @@
-export type ConnectionType =
-  | 'mentor'
-  | 'influence'
-  | 'collaborator'
-  | 'rival'
-  | 'friend'
-  | 'circle'
-
-export interface Connection {
-  to: string
-  type: ConnectionType
-  note?: string
-}
+export type RoomId =
+  | 'renaissance'
+  | 'baroque'
+  | 'revolution'
+  | 'modernlife'
+  | 'avantgarde'
+  | 'american'
 
 export interface Artist {
   id: string
   name: string
-  years: [number, number]
+  short: string
+  wiki: string
+  born: number
+  died: number
   birthplace: string
   country: string
+  lat: number
+  lon: number
   movement: string
-  summary: string
-  connections: Connection[]
+  knownFor: string
+  blurb: string
+  teachers?: string[]
+  influences?: string[]
+  friends?: string[]
+  rivals?: string[]
+  collaborators?: string[]
+  partners?: string[]
+  notes?: Record<string, string>
 }
 
-export const CONNECTION_LABELS: Record<ConnectionType, string> = {
-  mentor: 'Mentorship',
-  influence: 'Influence',
-  collaborator: 'Collaboration',
-  rival: 'Rivalry',
-  friend: 'Friendship',
-  circle: 'Shared circle',
+export interface Room {
+  id: RoomId
+  numeral: string
+  title: string
+  span: string
+  intro: string
+  movements: string[]
+  wall: string
+  ink: string
+  muted: string
+  accent: string
+  chart: string
 }

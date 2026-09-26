@@ -1,0 +1,464 @@
+{
+  "giotto": {
+    "src": "portraits/giotto.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Giotto,_Santa_Maria_Novella.jpg",
+    "title": "Giotto,_Santa_Maria_Novella.jpg",
+    "license": "CC BY 3.0"
+  },
+  "van-eyck": {
+    "src": "portraits/van-eyck.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Jan_van_Eyck_-_Portrait_of_a_Man_(Self_Portrait%3F)_1433.jpg",
+    "title": "Jan_van_Eyck_-_Portrait_of_a_Man_(Self_Portrait?)_1433.jpg",
+    "license": "Public domain"
+  },
+  "masaccio": {
+    "src": "portraits/masaccio.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Masaccio_Self_Portrait.jpg",
+    "title": "Masaccio_Self_Portrait.jpg",
+    "license": "Public domain"
+  },
+  "bellini": {
+    "src": "portraits/bellini.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Giovanni_Bellini_Felt%C3%A9telezett%C3%96narck%C3%A9peKJ.jpg",
+    "title": "Giovanni_Bellini_FeltételezettÖnarcképeKJ.jpg",
+    "license": "Public domain"
+  },
+  "verrocchio": {
+    "src": "portraits/verrocchio.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Andrea_del_Castagno,_portrait_de_Verrocchio,_vers_1470.jpg",
+    "title": "Andrea_del_Castagno,_portrait_de_Verrocchio,_vers_1470.jpg",
+    "license": "CC BY-SA 4.0"
+  },
+  "botticelli": {
+    "src": "portraits/botticelli.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_083.jpg",
+    "title": "Sandro_Botticelli_083.jpg",
+    "license": "Public domain"
+  },
+  "bosch": {
+    "src": "portraits/bosch.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Jheronimus_Bosch_(cropped).jpg",
+    "title": "Jheronimus_Bosch_(cropped).jpg",
+    "license": "Public domain"
+  },
+  "leonardo": {
+    "src": "portraits/leonardo.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Francesco_Melzi_-_Portrait_of_Leonardo_(colour_correction).png",
+    "title": "Francesco_Melzi_-_Portrait_of_Leonardo_(colour_correction).png",
+    "license": "Public domain"
+  },
+  "durer": {
+    "src": "portraits/durer.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:D%C3%BCrer_Alte_Pinakothek.jpg",
+    "title": "Dürer_Alte_Pinakothek.jpg",
+    "license": "Public domain"
+  },
+  "michelangelo": {
+    "src": "portraits/michelangelo.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Michelangelo_Daniele_da_Volterra_(dettaglio).jpg",
+    "title": "Michelangelo_Daniele_da_Volterra_(dettaglio).jpg",
+    "license": "Public domain"
+  },
+  "giorgione": {
+    "src": "portraits/giorgione.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Self_portrait,_by_Giorgio_da_Castelfranco.jpg",
+    "title": "Self_portrait,_by_Giorgio_da_Castelfranco.jpg",
+    "license": "Public domain"
+  },
+  "raphael": {
+    "src": "portraits/raphael.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Raffaello_Sanzio.jpg",
+    "title": "Raffaello_Sanzio.jpg",
+    "license": "Public domain"
+  },
+  "titian": {
+    "src": "portraits/titian.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Titian_-_Self-portrait_(Museo_del_Prado).jpg",
+    "title": "Titian_-_Self-portrait_(Museo_del_Prado).jpg",
+    "license": "Public domain"
+  },
+  "tintoretto": {
+    "src": "portraits/tintoretto.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Tintoretto-selfport.jpg",
+    "title": "Tintoretto-selfport.jpg",
+    "license": "CC0"
+  },
+  "bruegel": {
+    "src": "portraits/bruegel.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Painter_and_the_Buyer,_ca._1566_-_Google_Art_Project.jpg",
+    "title": "Pieter_Bruegel_the_Elder_-_The_Painter_and_the_Buyer,_ca._1566_-_Google_Art_Project.jpg",
+    "license": "Public domain"
+  },
+  "el-greco": {
+    "src": "portraits/el-greco.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:El_Greco_-_Portrait_of_a_Man_-_WGA10554.jpg",
+    "title": "El_Greco_-_Portrait_of_a_Man_-_WGA10554.jpg",
+    "license": "Public domain"
+  },
+  "orazio": {
+    "src": "portraits/orazio.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Lucas_Emil_Vorsterman_after_Sir_Anthony_van_Dyck,_Orazio_Gentileschi,_probably_1626-1641,_NGA_10780_(cropped).jpg",
+    "title": "Lucas_Emil_Vorsterman_after_Sir_Anthony_van_Dyck,_Orazio_Gentileschi,_probably_1626-1641,_NGA_10780_(cropped).jpg",
+    "license": "CC0"
+  },
+  "caravaggio": {
+    "src": "portraits/caravaggio.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Bild-Ottavio_Leoni,_Caravaggio.jpg",
+    "title": "Bild-Ottavio_Leoni,_Caravaggio.jpg",
+    "license": "Public domain"
+  },
+  "rubens": {
+    "src": "portraits/rubens.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Self-portrait_-_RH.S.180_-_Rubenshuis_(after_restoration).jpg",
+    "title": "Peter_Paul_Rubens_-_Self-portrait_-_RH.S.180_-_Rubenshuis_(after_restoration).jpg",
+    "license": "Public domain"
+  },
+  "artemisia": {
+    "src": "portraits/artemisia.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Self-portrait_as_the_Allegory_of_Painting_(La_Pittura)_-_Artemisia_Gentileschi.jpg",
+    "title": "Self-portrait_as_the_Allegory_of_Painting_(La_Pittura)_-_Artemisia_Gentileschi.jpg",
+    "license": "Public domain"
+  },
+  "van-dyck": {
+    "src": "portraits/van-dyck.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Self-portrait_with_a_Sunflower.jpg",
+    "title": "Anthony_van_Dyck_-_Self-portrait_with_a_Sunflower.jpg",
+    "license": "Public domain"
+  },
+  "velazquez": {
+    "src": "portraits/velazquez.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_Autorretrato_45_x_38_cm_-_Colecci%C3%B3n_Real_Academia_de_Bellas_Artes_de_San_Carlos_-_Museo_de_Bellas_Artes_de_Valencia.jpg",
+    "title": "Diego_Velázquez_Autorretrato_45_x_38_cm_-_Colección_Real_Academia_de_Bellas_Artes_de_San_Carlos_-_Museo_de_Bellas_Artes_de_Valencia.jpg",
+    "license": "Public domain"
+  },
+  "rembrandt": {
+    "src": "portraits/rembrandt.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg",
+    "title": "Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg",
+    "license": "Public domain"
+  },
+  "vermeer": {
+    "src": "portraits/vermeer.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Cropped_version_of_Jan_Vermeer_van_Delft_002.jpg",
+    "title": "Cropped_version_of_Jan_Vermeer_van_Delft_002.jpg",
+    "license": "Public domain"
+  },
+  "reynolds": {
+    "src": "portraits/reynolds.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_(2315517).jpg",
+    "title": "Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_(2315517).jpg",
+    "license": "Public domain"
+  },
+  "gainsborough": {
+    "src": "portraits/gainsborough.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Thomas_Gainsborough_by_Thomas_Gainsborough.jpg",
+    "title": "Thomas_Gainsborough_by_Thomas_Gainsborough.jpg",
+    "license": "Public domain"
+  },
+  "goya": {
+    "src": "portraits/goya.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Vicente_L%C3%B3pez_Porta%C3%B1a_-_el_pintor_Francisco_de_Goya.jpg",
+    "title": "Vicente_López_Portaña_-_el_pintor_Francisco_de_Goya.jpg",
+    "license": "Public domain"
+  },
+  "david": {
+    "src": "portraits/david.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:David_Self_Portrait.jpg",
+    "title": "David_Self_Portrait.jpg",
+    "license": "Public domain"
+  },
+  "hokusai": {
+    "src": "portraits/hokusai.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Hokusai_as_an_old_man.jpg",
+    "title": "Hokusai_as_an_old_man.jpg",
+    "license": "CC0"
+  },
+  "friedrich": {
+    "src": "portraits/friedrich.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Gerhard_von_K%C3%BCgelgen_portrait_of_Friedrich.jpg",
+    "title": "Gerhard_von_Kügelgen_portrait_of_Friedrich.jpg",
+    "license": "Public domain"
+  },
+  "turner": {
+    "src": "portraits/turner.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Turner_Self_Portrait.jpg",
+    "title": "Turner_Self_Portrait.jpg",
+    "license": "Public domain"
+  },
+  "constable": {
+    "src": "portraits/constable.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:John_Constable_by_Ramsay_Richard_Reinagle.jpg",
+    "title": "John_Constable_by_Ramsay_Richard_Reinagle.jpg",
+    "license": "Public domain"
+  },
+  "ingres": {
+    "src": "portraits/ingres.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Portrait_de_Jean-Auguste-Dominique_Ingres_(1780-1867),_peintre._PH10351_(Cropped).jpg",
+    "title": "Portrait_de_Jean-Auguste-Dominique_Ingres_(1780-1867),_peintre._PH10351_(Cropped).jpg",
+    "license": "CC0"
+  },
+  "delacroix": {
+    "src": "portraits/delacroix.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:F%C3%A9lix_Nadar_1820-1910_portraits_Eug%C3%A8ne_Delacroix_restored.jpg",
+    "title": "Félix_Nadar_1820-1910_portraits_Eugène_Delacroix_restored.jpg",
+    "license": "Public domain"
+  },
+  "courbet": {
+    "src": "portraits/courbet.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Gustave_Courbet,_photograph_Atelier_Nadar,_c._1860s.jpg",
+    "title": "Gustave_Courbet,_photograph_Atelier_Nadar,_c._1860s.jpg",
+    "license": "Public domain"
+  },
+  "pissarro": {
+    "src": "portraits/pissarro.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Pissarro-portrait.jpg",
+    "title": "Pissarro-portrait.jpg",
+    "license": "Public domain"
+  },
+  "manet": {
+    "src": "portraits/manet.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:%C3%89douard_Manet,_en_buste,_de_face_-_Nadar.jpg",
+    "title": "Édouard_Manet,_en_buste,_de_face_-_Nadar.jpg",
+    "license": "Public domain"
+  },
+  "degas": {
+    "src": "portraits/degas.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Self-portrait_by_Edgar_Degas.jpg",
+    "title": "Self-portrait_by_Edgar_Degas.jpg",
+    "license": "Public domain"
+  },
+  "cezanne": {
+    "src": "portraits/cezanne.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Paul-Cezanne.jpg",
+    "title": "Paul-Cezanne.jpg",
+    "license": "Public domain"
+  },
+  "monet": {
+    "src": "portraits/monet.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Claude_Monet_1899_Nadar_crop.jpg",
+    "title": "Claude_Monet_1899_Nadar_crop.jpg",
+    "license": "Public domain"
+  },
+  "morisot": {
+    "src": "portraits/morisot.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Morisot_berthe_photo.jpg",
+    "title": "Morisot_berthe_photo.jpg",
+    "license": "Public domain"
+  },
+  "renoir": {
+    "src": "portraits/renoir.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Pierre_Auguste_Renoir,_uncropped_image.jpg",
+    "title": "Pierre_Auguste_Renoir,_uncropped_image.jpg",
+    "license": "Public domain"
+  },
+  "cassatt": {
+    "src": "portraits/cassatt.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Mary_Cassatt_photograph_1913.jpg",
+    "title": "Mary_Cassatt_photograph_1913.jpg",
+    "license": "Public domain"
+  },
+  "gauguin": {
+    "src": "portraits/gauguin.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Paul_Gauguin_1891.png",
+    "title": "Paul_Gauguin_1891.png",
+    "license": "Public domain"
+  },
+  "van-gogh": {
+    "src": "portraits/van-gogh.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_(454045).jpg",
+    "title": "Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_(454045).jpg",
+    "license": "Public domain"
+  },
+  "seurat": {
+    "src": "portraits/seurat.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Georges_Seurat_1888.jpg",
+    "title": "Georges_Seurat_1888.jpg",
+    "license": "Public domain"
+  },
+  "signac": {
+    "src": "portraits/signac.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Paul_Signac,_ca._1883.jpg",
+    "title": "Paul_Signac,_ca._1883.jpg",
+    "license": "Public domain"
+  },
+  "toulouse": {
+    "src": "portraits/toulouse.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Photolautrec.jpg",
+    "title": "Photolautrec.jpg",
+    "license": "Public domain"
+  },
+  "klimt": {
+    "src": "portraits/klimt.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Klimt.jpg",
+    "title": "Klimt.jpg",
+    "license": "Public domain"
+  },
+  "munch": {
+    "src": "portraits/munch.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Portrait_of_Edvard_Munch_(cropped).png",
+    "title": "Portrait_of_Edvard_Munch_(cropped).png",
+    "license": "CC BY 2.0"
+  },
+  "kandinsky": {
+    "src": "portraits/kandinsky.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg",
+    "title": "Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg",
+    "license": "Public domain"
+  },
+  "matisse": {
+    "src": "portraits/matisse.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Henri_Matisse,_1913,_photograph_by_Alvin_Langdon_Coburn.jpg",
+    "title": "Henri_Matisse,_1913,_photograph_by_Alvin_Langdon_Coburn.jpg",
+    "license": "Public domain"
+  },
+  "mondrian": {
+    "src": "portraits/mondrian.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Piet_Mondriaan.jpg",
+    "title": "Piet_Mondriaan.jpg",
+    "license": "Public domain"
+  },
+  "brancusi": {
+    "src": "portraits/brancusi.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Edward_Steichen_-_Brancusi.jpg",
+    "title": "Edward_Steichen_-_Brancusi.jpg",
+    "license": "Public domain"
+  },
+  "klee": {
+    "src": "portraits/klee.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Paul_Klee_by_Hugo_Erfurth,_1922.jpg",
+    "title": "Paul_Klee_by_Hugo_Erfurth,_1922.jpg",
+    "license": "Public domain"
+  },
+  "marc": {
+    "src": "portraits/marc.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Macke_bildnis-franz-marc.jpg",
+    "title": "Macke bildnis-franz-marc.jpg",
+    "license": "Public domain"
+  },
+  "kirchner": {
+    "src": "portraits/kirchner.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Ernst_Ludwig_Kirchner_-_Selbstportr%C3%A4t_in_der_Atelierwohnung_in_Berlin-Friedenau_(1913-15).jpg",
+    "title": "Ernst_Ludwig_Kirchner_-_Selbstporträt_in_der_Atelierwohnung_in_Berlin-Friedenau_(1913-15).jpg",
+    "license": "Public domain"
+  },
+  "picasso": {
+    "src": "portraits/picasso.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Pablo_picasso_1.jpg",
+    "title": "Pablo_picasso_1.jpg",
+    "license": "Public domain"
+  },
+  "braque": {
+    "src": "portraits/braque.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Georges_Braque,_1908,_photograph_published_in_Gelett_Burgess,_The_Wild_Men_of_Paris,_Architectural_Record,_May_1910.jpg",
+    "title": "Georges_Braque,_1908,_photograph_published_in_Gelett_Burgess,_The_Wild_Men_of_Paris,_Architectural_Record,_May_1910.jpg",
+    "license": "Public domain"
+  },
+  "hopper": {
+    "src": "portraits/hopper.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Edward_Hopper,_New_York_artist_LCCN2016871478_(cropped).jpg",
+    "title": "Edward_Hopper,_New_York_artist_LCCN2016871478_(cropped).jpg",
+    "license": "Public domain"
+  },
+  "modigliani": {
+    "src": "portraits/modigliani.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Amedeo_Modigliani_in_his_studio.jpg",
+    "title": "Amedeo_Modigliani_in_his_studio.jpg",
+    "license": "Public domain"
+  },
+  "rivera": {
+    "src": "portraits/rivera.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Diego_Rivera_-_Google_Art_Project_(cropped).jpg",
+    "title": "Diego_Rivera_-_Google_Art_Project_(cropped).jpg",
+    "license": "Public domain"
+  },
+  "okeeffe": {
+    "src": "portraits/okeeffe.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Georgia_O%27Keeffe_MET_DP230868.jpg",
+    "title": "Georgia_O'Keeffe_MET_DP230868.jpg",
+    "license": "CC0"
+  },
+  "chagall": {
+    "src": "portraits/chagall.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Shagal_Choumoff.jpg",
+    "title": "Shagal_Choumoff.jpg",
+    "license": "Public domain"
+  },
+  "duchamp": {
+    "src": "portraits/duchamp.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Marcel_Duchamp_by_Joseph_Stella.jpg",
+    "title": "Marcel Duchamp by Joseph Stella.jpg",
+    "license": "Public domain"
+  },
+  "schiele": {
+    "src": "portraits/schiele.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Egon_Schiele_-_Self-Portrait_with_Physalis_-_Google_Art_Project.jpg",
+    "title": "Egon_Schiele_-_Self-Portrait_with_Physalis_-_Google_Art_Project.jpg",
+    "license": "Public domain"
+  },
+  "miro": {
+    "src": "portraits/miro.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Portrait_of_Joan_Miro,_Barcelona_1935_June_13.jpg",
+    "title": "Portrait_of_Joan_Miro,_Barcelona_1935_June_13.jpg",
+    "license": "Public domain"
+  },
+  "magritte": {
+    "src": "portraits/magritte.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Portrait_en_buste_du_peintre_surr%C3%A9aliste_Ren%C3%A9_Magritte_(1898-1967)_le_18_octobre_1961_devant_une_de_ses_toiles,_PH19994.jpg",
+    "title": "Portrait_en_buste_du_peintre_surréaliste_René_Magritte_(1898-1967)_le_18_octobre_1961_devant_une_de_ses_toiles,_PH19994.jpg",
+    "license": "CC0"
+  },
+  "calder": {
+    "src": "portraits/calder.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Alexander_Calder_1947_-_Photo_by_Carl_Van_Vechten.jpg",
+    "title": "Alexander_Calder_1947_-_Photo_by_Carl_Van_Vechten.jpg",
+    "license": "Public domain"
+  },
+  "rothko": {
+    "src": "portraits/rothko.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Consuelo_Kanaga,_Mark_Rothko,_Yorktown_Heights,_ca._1949.jpg",
+    "title": "Consuelo_Kanaga,_Mark_Rothko,_Yorktown_Heights,_ca._1949.jpg",
+    "license": "No restrictions"
+  },
+  "dali": {
+    "src": "portraits/dali.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Salvador_Dal%C3%AD_1939.jpg",
+    "title": "Salvador_Dalí_1939.jpg",
+    "license": "Public domain"
+  },
+  "de-kooning": {
+    "src": "portraits/de-kooning.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Willem_de_Kooning_in_his_studio.jpg",
+    "title": "Willem_de_Kooning_in_his_studio.jpg",
+    "license": "Public domain"
+  },
+  "kahlo": {
+    "src": "portraits/kahlo.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Frida_Kahlo,_by_Guillermo_Kahlo.jpg",
+    "title": "Frida_Kahlo,_by_Guillermo_Kahlo.jpg",
+    "license": "Public domain"
+  },
+  "krasner": {
+    "src": "portraits/krasner.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Lee_Krasner,_artist,_cropped.jpg",
+    "title": "Lee_Krasner,_artist,_cropped.jpg",
+    "license": "Public domain"
+  },
+  "pollock": {
+    "src": "portraits/pollock.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Jackson_Pollock%27s_passport_(cropped).jpg",
+    "title": "Jackson_Pollock's_passport_(cropped).jpg",
+    "license": "Public domain"
+  },
+  "warhol": {
+    "src": "portraits/warhol.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Andy_Warhol_by_Bernard_Gotfryd_1980.png",
+    "title": "Andy_Warhol_by_Bernard_Gotfryd_1980.png",
+    "license": "Public domain"
+  },
+  "basquiat": {
+    "src": "portraits/basquiat.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Jean-Michel_Basquiat_passport_(cropped).jpg",
+    "title": "Jean-Michel_Basquiat_passport_(cropped).jpg",
+    "license": "Public domain"
+  }
+}
