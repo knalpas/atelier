@@ -400,7 +400,7 @@ a {
 
 .room {
   background: var(--wall);
-  color: var(--ink);
+  color: var(--room-ink);
   padding: 96px 0 104px;
   position: relative;
 }
@@ -427,7 +427,7 @@ a {
   font-size: 0.82rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--room-accent);
 }
 
 .room__title {
@@ -442,14 +442,14 @@ a {
   margin: 0 0 14px;
   font-style: italic;
   font-size: 1.1rem;
-  color: var(--muted);
+  color: var(--room-muted);
 }
 
 .room__intro {
   max-width: 40rem;
   margin: 0 0 18px;
   font-size: 1.12rem;
-  color: var(--muted);
+  color: var(--room-muted);
 }
 
 .room__movements {
@@ -463,9 +463,9 @@ a {
 
 .room__movements li {
   padding: 3px 12px;
-  border: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  border: 1px solid color-mix(in srgb, var(--room-accent) 60%, transparent);
   font-size: 0.9rem;
-  color: var(--ink);
+  color: var(--room-ink);
 }
 
 .room__swipe {
@@ -801,7 +801,7 @@ a {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--room-muted);
   }
 
   .room__swipe span {
@@ -843,7 +843,7 @@ a {
     right: 4px;
     font-size: 0.8rem;
     letter-spacing: 0.1em;
-    color: var(--muted);
+    color: var(--room-muted);
   }
 
   .card > .frame {

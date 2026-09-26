@@ -87,13 +87,26 @@ export function BirthMap() {
 
   useEffect(() => {
     let alive = true
-    import('world-atlas/countries-50m.json').then((mod) => {
-      const topo = (mod.default ?? mod) as unknown as Topology
-      const fc = feature(topo, topo.objects.countries) as unknown as FeatureCollection<Geometry>
-      if (alive) setLand(fc)
-    })
+    const section = document.getElementById('birthplaces')
+    const load = () =>
+      import('world-atlas/countries-50m.json').then((mod) => {
+        const topo = (mod.default ?? mod) as unknown as Topology
+        const fc = feature(topo, topo.objects.countries) as unknown as FeatureCollection<Geometry>
+        if (alive) setLand(fc)
+      })
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          io.disconnect()
+          load()
+        }
+      },
+      { rootMargin: '1200px 0px' },
+    )
+    if (section) io.observe(section)
     return () => {
       alive = false
+      io.disconnect()
     }
   }, [])
 

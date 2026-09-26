@@ -11,9 +11,9 @@ interface RoomSectionProps {
 export function RoomSection({ room, artists }: RoomSectionProps) {
   const style = {
     '--wall': room.wall,
-    '--ink': room.ink,
-    '--muted': room.muted,
-    '--accent': room.accent,
+    '--room-ink': room.ink,
+    '--room-muted': room.muted,
+    '--room-accent': room.accent,
   } as CSSProperties
 
   const movements = room.movements.filter((m) => artists.some((a) => a.movement === m))

@@ -8,9 +8,6 @@ interface PersonLinkProps {
   from?: string
 }
 
-const canHover =
-  typeof window !== 'undefined' && window.matchMedia?.('(hover: hover)').matches
-
 export function PersonLink({ id, from }: PersonLinkProps) {
   const { jumpTo } = useNavigation()
   const [open, setOpen] = useState(false)
@@ -21,8 +18,8 @@ export function PersonLink({ id, from }: PersonLinkProps) {
   return (
     <span
       className="person"
-      onMouseEnter={canHover ? () => setOpen(true) : undefined}
-      onMouseLeave={canHover ? () => setOpen(false) : undefined}
+      onPointerEnter={(e) => e.pointerType === 'mouse' && setOpen(true)}
+      onPointerLeave={() => setOpen(false)}
     >
       <button
         type="button"

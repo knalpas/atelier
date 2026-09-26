@@ -26,7 +26,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   const flash = useCallback((id: string) => {
     window.clearTimeout(highlightTimer.current)
     setHighlighted(id)
-    highlightTimer.current = window.setTimeout(() => setHighlighted(null), 2400)
+    highlightTimer.current = window.setTimeout(() => setHighlighted(null), 4000)
   }, [])
 
   const jumpTo = useCallback(
