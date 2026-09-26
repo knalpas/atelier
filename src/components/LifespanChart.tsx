@@ -40,6 +40,7 @@ export function LifespanChart() {
   const wrapRef = useRef<HTMLDivElement>(null)
   const [width, setWidth] = useState(1000)
   const [focus, setFocus] = useState<string | null>(null)
+  const [atEnd, setAtEnd] = useState(false)
   const { jumpTo } = useNavigation()
 
   useEffect(() => {
@@ -74,7 +75,18 @@ export function LifespanChart() {
       </div>
 
       <div className="chart" ref={wrapRef}>
-        <div className="chart__scroll">
+        {innerW + 90 > width && (
+          <p className="chart__hint" aria-hidden="true">
+            Swipe sideways to travel through time <span>→</span>
+          </p>
+        )}
+        <div
+          className={`chart__scroll${innerW + 90 > width && !atEnd ? ' chart__scroll--wide' : ''}`}
+          onScroll={(e) => {
+            const el = e.currentTarget
+            setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 8)
+          }}
+        >
           <div
             className="chart__canvas"
             style={{ width: innerW + 90, height }}

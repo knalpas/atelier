@@ -14,7 +14,10 @@ const NavContext = createContext<NavState | null>(null)
 function scrollToCard(id: string) {
   const el = document.getElementById(`artist-${id}`)
   if (!el) return
-  el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' })
+  const distance = Math.abs(el.getBoundingClientRect().top)
+  // Smooth-scrolling across several rooms flickers through unrelated walls; jump instead.
+  const far = distance > window.innerHeight * 2.5
+  el.scrollIntoView({ behavior: far ? 'instant' : 'smooth', block: 'center', inline: 'center' })
 }
 
 export function NavigationProvider({ children }: { children: ReactNode }) {
