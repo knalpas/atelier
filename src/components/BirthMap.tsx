@@ -13,8 +13,10 @@ import { useNavigation } from '../lib/navigation'
 type View = 'europe' | 'world'
 
 const SIZE: Record<View, [number, number]> = { europe: [800, 620], world: [800, 420] }
+// Markers closer than this (in viewBox units) merge into one, so none hides another.
+const MERGE_DISTANCE: Record<View, number> = { europe: 16, world: 12 }
 
-interface Cluster {
+interface Place {
   key: string
   place: string
   country: string
@@ -23,12 +25,21 @@ interface Cluster {
   artists: GalleryArtist[]
 }
 
-const clusters: Cluster[] = (() => {
-  const map = new Map<string, Cluster>()
+interface Cluster {
+  key: string
+  place: string
+  country: string
+  x: number
+  y: number
+  artists: GalleryArtist[]
+}
+
+const places: Place[] = (() => {
+  const map = new Map<string, Place>()
   for (const a of artists) {
-    const key = `${a.lat.toFixed(1)},${a.lon.toFixed(1)}`
-    const c = map.get(key)
-    if (c) c.artists.push(a)
+    const key = `${a.birthplace}|${a.country}`
+    const p = map.get(key)
+    if (p) p.artists.push(a)
     else
       map.set(key, {
         key,
@@ -79,10 +90,38 @@ function makeProjection(view: View): GeoProjection {
     )
 }
 
+function clusterPlaces(view: View, projection: GeoProjection) {
+  const [w, h] = SIZE[view]
+  const clusters: Cluster[] = []
+  const outside: Place[] = []
+  for (const p of places) {
+    const xy = projection([p.lon, p.lat])
+    if (!xy || xy[0] < 0 || xy[0] > w || xy[1] < 0 || xy[1] > h) {
+      outside.push(p)
+      continue
+    }
+    const near = clusters.find(
+      (c) => Math.hypot(c.x - xy[0], c.y - xy[1]) < MERGE_DISTANCE[view],
+    )
+    if (near) near.artists.push(...p.artists)
+    else
+      clusters.push({
+        key: p.key,
+        place: p.place,
+        country: p.country,
+        x: xy[0],
+        y: xy[1],
+        artists: [...p.artists],
+      })
+  }
+  for (const c of clusters) c.artists.sort((a, b) => a.born - b.born)
+  return { clusters, outside }
+}
+
 export function BirthMap() {
   const [land, setLand] = useState<FeatureCollection<Geometry> | null>(null)
   const [view, setView] = useState<View>('europe')
-  const [selected, setSelected] = useState<string>(clusters[0].key)
+  const [selected, setSelected] = useState<string>(places[0].key)
   const { jumpTo } = useNavigation()
 
   useEffect(() => {
@@ -114,16 +153,22 @@ export function BirthMap() {
   const projection = useMemo(() => makeProjection(view), [view])
   const path = useMemo(() => geoPath(projection), [projection])
   const graticule = useMemo(() => path(geoGraticule10()) ?? '', [path])
+  const { clusters, outside } = useMemo(() => clusterPlaces(view, projection), [view, projection])
 
-  const points = clusters
-    .map((c) => {
-      const p = projection([c.lon, c.lat])
-      return p ? { ...c, x: p[0], y: p[1] } : null
-    })
-    .filter((p): p is Cluster & { x: number; y: number } => !!p && p.x > 0 && p.x < w && p.y > 0 && p.y < h)
-
-  const outside = view === 'europe' ? clusters.filter((c) => !points.some((p) => p.key === c.key)) : []
-  const current = clusters.find((c) => c.key === selected) ?? clusters[0]
+  const outsideClusters: Cluster[] = outside.map((p) => ({
+    key: p.key,
+    place: p.place,
+    country: p.country,
+    x: 0,
+    y: 0,
+    artists: p.artists,
+  }))
+  const current =
+    clusters.find((c) => c.key === selected) ??
+    outsideClusters.find((c) => c.key === selected) ??
+    clusters.find((c) => c.artists.some((a) => `${a.birthplace}|${a.country}` === selected)) ??
+    clusters[0]
+  const mixed = new Set(current.artists.map((a) => a.birthplace)).size > 1
 
   return (
     <section className="section section--parchment" id="birthplaces">
@@ -152,46 +197,53 @@ export function BirthMap() {
               </button>
             ))}
           </div>
-          <svg className="atlas__map" viewBox={`0 0 ${w} ${h}`} role="img" aria-label="Map of artist birthplaces">
+          <svg
+            className="atlas__map"
+            viewBox={`0 0 ${w} ${h}`}
+            role="img"
+            aria-label="Map of artist birthplaces"
+          >
             <rect width={w} height={h} className="atlas__sea" />
             <path d={graticule} className="atlas__graticule" />
             {land?.features.map((f, i) => (
               <path key={i} d={path(f) ?? ''} className="atlas__land" />
             ))}
-            {points.map((p) => {
-              const r = 4.5 + Math.sqrt(p.artists.length - 1) * 3.2
-              const isSel = p.key === current.key
-              return (
-                <g
-                  key={p.key}
-                  transform={`translate(${p.x},${p.y})`}
-                  className={`pin${isSel ? ' is-selected' : ''}`}
-                  onClick={() => setSelected(p.key)}
-                  onMouseEnter={() => setSelected(p.key)}
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`${p.place}: ${p.artists.map((a) => a.name).join(', ')}`}
-                  onKeyDown={(e) => e.key === 'Enter' && setSelected(p.key)}
-                >
-                  <circle r={r + 9} className="pin__hit" />
-                  <circle r={r} className="pin__dot" />
-                  {(p.artists.length > 1 || isSel) && (
-                    <text y={-r - 5} className="pin__label">
-                      {p.place}
-                      {p.artists.length > 1 ? ` · ${p.artists.length}` : ''}
-                    </text>
-                  )}
-                </g>
-              )
-            })}
+            {[...clusters]
+              .sort((a, b) => (a.key === current.key ? 1 : b.key === current.key ? -1 : 0))
+              .map((c) => {
+                const r = 4.5 + Math.sqrt(c.artists.length - 1) * 3.2
+                const isSel = c.key === current.key
+                return (
+                  <g
+                    key={c.key}
+                    transform={`translate(${c.x},${c.y})`}
+                    className={`pin${isSel ? ' is-selected' : ''}`}
+                    onClick={() => setSelected(c.key)}
+                    onMouseEnter={() => setSelected(c.key)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`${c.place}: ${c.artists.map((a) => a.name).join(', ')}`}
+                    onKeyDown={(e) => e.key === 'Enter' && setSelected(c.key)}
+                  >
+                    <circle r={r + 8} className="pin__hit" />
+                    <circle r={r} className="pin__dot" />
+                    {(c.artists.length > 1 || isSel) && (
+                      <text y={-r - 5} className="pin__label">
+                        {c.place}
+                        {c.artists.length > 1 ? ` · ${c.artists.length}` : ''}
+                      </text>
+                    )}
+                  </g>
+                )
+              })}
           </svg>
-          {outside.length > 0 && (
+          {view === 'europe' && outside.length > 0 && (
             <p className="atlas__outside">
               Beyond Europe:{' '}
-              {outside.map((c, i) => (
-                <span key={c.key}>
-                  <button type="button" onClick={() => setSelected(c.key)}>
-                    {c.place}
+              {outside.map((p, i) => (
+                <span key={p.key}>
+                  <button type="button" onClick={() => setSelected(p.key)}>
+                    {p.place}
                   </button>
                   {i < outside.length - 1 ? ', ' : ''}
                 </span>
@@ -203,6 +255,7 @@ export function BirthMap() {
         <aside className="atlas__panel" aria-live="polite">
           <p className="atlas__place">
             {current.place}
+            {mixed ? ' area' : ''}
             <span>{current.country}</span>
           </p>
           <ul>
@@ -214,6 +267,7 @@ export function BirthMap() {
                     <strong>{a.name}</strong>
                     <span>
                       {a.born}–{a.died} · {a.movement}
+                      {mixed ? ` · ${a.birthplace}` : ''}
                     </span>
                   </span>
                 </button>

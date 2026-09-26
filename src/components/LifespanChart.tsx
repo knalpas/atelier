@@ -77,7 +77,7 @@ export function LifespanChart() {
         <div className="chart__scroll">
           <div
             className="chart__canvas"
-            style={{ width: innerW, height }}
+            style={{ width: innerW + 90, height }}
             onMouseLeave={() => setFocus(null)}
           >
             {centuries.map((y) => (
