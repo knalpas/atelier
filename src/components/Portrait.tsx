@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { portraitOf } from '../data/portraits'
+import { useI18n } from '../lib/i18n'
 
 interface PortraitProps {
   id: string
@@ -20,6 +21,7 @@ function initials(name: string) {
 export function Portrait({ id, name, size = 'card', eager = false }: PortraitProps) {
   const portrait = portraitOf(id)
   const [failed, setFailed] = useState(false)
+  const { tx } = useI18n()
 
   return (
     <div className={`frame frame--${size}`}>
@@ -27,7 +29,7 @@ export function Portrait({ id, name, size = 'card', eager = false }: PortraitPro
         {portrait && !failed ? (
           <img
             src={portrait.url}
-            alt={`Portrait of ${name}`}
+            alt={tx.t('portrait_alt', { name })}
             loading={eager ? 'eager' : 'lazy'}
             decoding="async"
             onError={() => setFailed(true)}

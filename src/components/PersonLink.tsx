@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { byId, noteBetween } from '../data/graph'
 import { useNavigation } from '../lib/navigation'
 import { Portrait } from './Portrait'
+import { useI18n } from '../lib/i18n'
 
 interface PersonLinkProps {
   id: string
@@ -11,6 +12,7 @@ interface PersonLinkProps {
 export function PersonLink({ id, from }: PersonLinkProps) {
   const { jumpTo } = useNavigation()
   const [open, setOpen] = useState(false)
+  const { tx } = useI18n()
   const artist = byId.get(id)
   if (!artist) return null
   const note = from ? noteBetween(from, id) : undefined
@@ -29,18 +31,18 @@ export function PersonLink({ id, from }: PersonLinkProps) {
           jumpTo(id, from)
         }}
       >
-        {artist.short}
+        {tx.short(artist)}
       </button>
       {open && (
         <span className="peek" role="tooltip">
-          <Portrait id={artist.id} name={artist.name} size="thumb" />
+          <Portrait id={artist.id} name={tx.name(artist)} size="thumb" />
           <span className="peek__text">
-            <strong>{artist.name}</strong>
+            <strong>{tx.name(artist)}</strong>
             <span>
-              {artist.born}–{artist.died} · {artist.movement}
+              {artist.born}–{artist.died} · {tx.movement(artist.movement)}
             </span>
             <span>
-              {artist.birthplace}, {artist.country}
+              {tx.place(artist.birthplace)}, {tx.country(artist.country)}
             </span>
           </span>
         </span>

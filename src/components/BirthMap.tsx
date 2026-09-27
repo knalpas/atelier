@@ -9,6 +9,7 @@ import type { GalleryArtist } from '../data/graph'
 import { PersonLink } from './PersonLink'
 import { Portrait } from './Portrait'
 import { useNavigation } from '../lib/navigation'
+import { useI18n } from '../lib/i18n'
 
 type View = 'europe' | 'world'
 
@@ -56,7 +57,7 @@ const places: Place[] = (() => {
 const byCountry = (() => {
   const map = new Map<string, GalleryArtist[]>()
   for (const a of artists) map.set(a.country, [...(map.get(a.country) ?? []), a])
-  return [...map.entries()].sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
+  return [...map.entries()]
 })()
 
 function makeProjection(view: View): GeoProjection {
@@ -123,6 +124,16 @@ export function BirthMap() {
   const [view, setView] = useState<View>('europe')
   const [selected, setSelected] = useState<string>(places[0].key)
   const { jumpTo } = useNavigation()
+  const { tx } = useI18n()
+  const countries = useMemo(
+    () =>
+      [...byCountry].sort(
+        (a, b) =>
+          b[1].length - a[1].length ||
+          tx.country(a[0]).localeCompare(tx.country(b[0]), tx.lang),
+      ),
+    [tx],
+  )
 
   useEffect(() => {
     let alive = true
@@ -173,17 +184,14 @@ export function BirthMap() {
   return (
     <section className="section section--parchment" id="birthplaces">
       <div className="section__head">
-        <p className="section__eyebrow">Origins</p>
-        <h2 className="section__title">Where they were born</h2>
-        <p className="section__lede">
-          Most of these painters were born within a few hundred kilometres of each other. Tap a
-          marker to see who came from there.
-        </p>
+        <p className="section__eyebrow">{tx.t('map_eyebrow')}</p>
+        <h2 className="section__title">{tx.t('map_long')}</h2>
+        <p className="section__lede">{tx.t('map_lede')}</p>
       </div>
 
       <div className="atlas">
         <div className="atlas__mapwrap">
-          <div className="atlas__toggle" role="tablist" aria-label="Map extent">
+          <div className="atlas__toggle" role="tablist" aria-label={tx.t('map_extent')}>
             {(['europe', 'world'] as View[]).map((v) => (
               <button
                 key={v}
@@ -193,7 +201,7 @@ export function BirthMap() {
                 className={view === v ? 'is-active' : undefined}
                 onClick={() => setView(v)}
               >
-                {v === 'europe' ? 'Europe' : 'World'}
+                {tx.t(v)}
               </button>
             ))}
           </div>
@@ -201,7 +209,7 @@ export function BirthMap() {
             className="atlas__map"
             viewBox={`0 0 ${w} ${h}`}
             role="img"
-            aria-label="Map of artist birthplaces"
+            aria-label={tx.t('map_label')}
           >
             <rect width={w} height={h} className="atlas__sea" />
             <path d={graticule} className="atlas__graticule" />
@@ -222,14 +230,14 @@ export function BirthMap() {
                     onMouseEnter={() => setSelected(c.key)}
                     role="button"
                     tabIndex={0}
-                    aria-label={`${c.place}: ${c.artists.map((a) => a.name).join(', ')}`}
+                    aria-label={`${tx.place(c.place)}: ${c.artists.map((a) => tx.name(a)).join(', ')}`}
                     onKeyDown={(e) => e.key === 'Enter' && setSelected(c.key)}
                   >
                     <circle r={r + 8} className="pin__hit" />
                     <circle r={r} className="pin__dot" />
                     {(c.artists.length > 1 || isSel) && (
                       <text y={-r - 5} className="pin__label">
-                        {c.place}
+                        {tx.place(c.place)}
                         {c.artists.length > 1 ? ` · ${c.artists.length}` : ''}
                       </text>
                     )}
@@ -239,11 +247,11 @@ export function BirthMap() {
           </svg>
           {view === 'europe' && outside.length > 0 && (
             <p className="atlas__outside">
-              Beyond Europe:{' '}
+              {tx.t('beyond_europe')}{' '}
               {outside.map((p, i) => (
                 <span key={p.key}>
                   <button type="button" onClick={() => setSelected(p.key)}>
-                    {p.place}
+                    {tx.place(p.place)}
                   </button>
                   {i < outside.length - 1 ? ', ' : ''}
                 </span>
@@ -254,20 +262,19 @@ export function BirthMap() {
 
         <aside className="atlas__panel" aria-live="polite">
           <p className="atlas__place">
-            {current.place}
-            {mixed ? ' area' : ''}
-            <span>{current.country}</span>
+            {mixed ? tx.t('area', { place: tx.place(current.place) }) : tx.place(current.place)}
+            <span>{tx.country(current.country)}</span>
           </p>
           <ul>
             {current.artists.map((a) => (
               <li key={a.id}>
                 <button type="button" onClick={() => jumpTo(a.id)}>
-                  <Portrait id={a.id} name={a.name} size="thumb" />
+                  <Portrait id={a.id} name={tx.name(a)} size="thumb" />
                   <span>
-                    <strong>{a.name}</strong>
+                    <strong>{tx.name(a)}</strong>
                     <span>
-                      {a.born}–{a.died} · {a.movement}
-                      {mixed ? ` · ${a.birthplace}` : ''}
+                      {a.born}–{a.died} · {tx.movement(a.movement)}
+                      {mixed ? ` · ${tx.place(a.birthplace)}` : ''}
                     </span>
                   </span>
                 </button>
@@ -278,12 +285,12 @@ export function BirthMap() {
       </div>
 
       <div className="countries">
-        <h3>By country of birth</h3>
+        <h3>{tx.t('by_country')}</h3>
         <dl>
-          {byCountry.map(([country, list]) => (
+          {countries.map(([country, list]) => (
             <div key={country} className="countries__row">
               <dt>
-                {country} <span>{list.length}</span>
+                {tx.country(country)} <span>{list.length}</span>
               </dt>
               <dd>
                 {list.map((a, i) => (

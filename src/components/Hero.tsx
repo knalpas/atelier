@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { artists, pairCount } from '../data/graph'
 import { Portrait } from './Portrait'
+import { LangToggle } from './LangToggle'
+import { useI18n } from '../lib/i18n'
 
 const SALON = [
   'rembrandt',
@@ -46,6 +48,7 @@ const SALON = [
 ]
 
 export function Hero() {
+  const { tx } = useI18n()
   const hang = SALON.map((id) => artists.find((a) => a.id === id)!).filter(Boolean)
 
   return (
@@ -59,11 +62,12 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.05 * i, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Portrait id={a.id} name={a.name} size="hero" eager={i < 10} />
+            <Portrait id={a.id} name={tx.name(a)} size="hero" eager={i < 10} />
           </motion.div>
         ))}
       </div>
       <div className="hero__veil" aria-hidden="true" />
+      <LangToggle className="lang--hero" />
 
       <motion.div
         className="hero__plaque"
@@ -71,27 +75,24 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
       >
-        <p className="hero__eyebrow">A family tree of painting</p>
+        <p className="hero__eyebrow">{tx.t('eyebrow')}</p>
         <h1 className="hero__title">Lineage</h1>
-        <p className="hero__lede">
-          Seven centuries of painters: who taught whom, who inspired whom, and who
-          couldn’t stand each other.
-        </p>
+        <p className="hero__lede">{tx.t('lede')}</p>
         <p className="hero__stats">
           <span>
-            <strong>{artists.length}</strong> artists
+            <strong>{artists.length}</strong> {tx.t('stat_artists')}
           </span>
           <span>
-            <strong>6</strong> rooms
+            <strong>6</strong> {tx.t('stat_rooms')}
           </span>
           <span>
-            <strong>{pairCount}</strong> connections
+            <strong>{pairCount}</strong> {tx.t('stat_links')}
           </span>
         </p>
         <a className="hero__cta" href="#room-renaissance">
-          Enter the gallery
+          {tx.t('cta')}
         </a>
-        <p className="hero__hint">Tap any name to jump to that artist.</p>
+        <p className="hero__hint">{tx.t('hint')}</p>
       </motion.div>
     </header>
   )

@@ -1,29 +1,24 @@
 import { useEffect, useRef, useState } from 'react'
 import { rooms } from '../data/rooms'
+import { useI18n } from '../lib/i18n'
+import { LangToggle } from './LangToggle'
 
 interface NavBarProps {
   onSearch: () => void
 }
 
-const SHORT: Record<string, string> = {
-  renaissance: 'Renaissance',
-  baroque: 'Baroque',
-  revolution: 'Romanticism',
-  modernlife: 'Impressionism',
-  avantgarde: 'Avant-Garde',
-  american: 'America',
-}
-
-const LINKS = [
-  ...rooms.map((r) => ({ id: `room-${r.id}`, label: r.title, short: SHORT[r.id] })),
-  { id: 'lifespans', label: 'Who lived when', short: 'Timeline' },
-  { id: 'birthplaces', label: 'Where they were born', short: 'Map' },
-]
+const LINK_IDS = [...rooms.map((r) => `room-${r.id}`), 'lifespans', 'birthplaces']
 
 export function NavBar({ onSearch }: NavBarProps) {
   const [active, setActive] = useState<string>('')
   const [visible, setVisible] = useState(false)
   const listRef = useRef<HTMLUListElement>(null)
+  const { tx } = useI18n()
+  const links = [
+    ...rooms.map((r) => ({ id: `room-${r.id}`, label: tx.room(r).title, short: tx.room(r).short })),
+    { id: 'lifespans', label: tx.t('timeline_long'), short: tx.t('timeline_short') },
+    { id: 'birthplaces', label: tx.t('map_long'), short: tx.t('map_short') },
+  ]
 
   useEffect(() => {
     const hero = document.getElementById('top')
@@ -41,8 +36,8 @@ export function NavBar({ onSearch }: NavBarProps) {
       },
       { rootMargin: '-45% 0px -50% 0px' },
     )
-    for (const link of LINKS) {
-      const el = document.getElementById(link.id)
+    for (const id of LINK_IDS) {
+      const el = document.getElementById(id)
       if (el) sectionObserver.observe(el)
     }
     return () => {
@@ -57,12 +52,12 @@ export function NavBar({ onSearch }: NavBarProps) {
   }, [active])
 
   return (
-    <nav className={`nav${visible ? ' nav--visible' : ''}`} aria-label="Gallery rooms">
+    <nav className={`nav${visible ? ' nav--visible' : ''}`} aria-label={tx.t('nav_label')}>
       <a className="nav__brand" href="#top">
         Lineage
       </a>
       <ul className="nav__links" ref={listRef}>
-        {LINKS.map((link) => (
+        {links.map((link) => (
           <li key={link.id}>
             <a
               href={`#${link.id}`}
@@ -76,12 +71,18 @@ export function NavBar({ onSearch }: NavBarProps) {
           </li>
         ))}
       </ul>
-      <button type="button" className="nav__search" onClick={onSearch} aria-label="Find an artist">
+      <LangToggle className="lang--nav" />
+      <button
+        type="button"
+        className="nav__search"
+        onClick={onSearch}
+        aria-label={tx.t('find_label')}
+      >
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
           <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
           <path d="M16 16l4.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
         </svg>
-        <span>Find</span>
+        <span>{tx.t('find')}</span>
       </button>
     </nav>
   )

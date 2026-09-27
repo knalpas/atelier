@@ -20,6 +20,8 @@ Two overview sections follow the rooms:
 
 On phones, each room becomes a swipeable carousel.
 
+The whole site is available in **English and French**. Use the EN/FR switch; the choice is remembered, and `?lang=fr` links straight to the French version.
+
 ## Develop
 
 ```bash
@@ -39,4 +41,6 @@ This builds the site and pushes `dist/` to the `gh-pages` branch.
 
 - Artists and relationships: `src/data/artists.ts` (relationships are stored one way; the reverse links are derived automatically)
 - Rooms and palettes: `src/data/rooms.ts`
+- French text (names, blurbs, stories, movements, places): `src/data/fr.ts`. Every artist and story needs a French entry; the dev server warns about gaps
+- French Wikipedia titles: `node scripts/fetch-fr-titles.mjs` writes `src/data/wiki-fr.json`
 - Portraits: `npm run portraits` downloads each artist's lead image from Wikimedia Commons (public domain or Creative Commons) and converts it to WebP

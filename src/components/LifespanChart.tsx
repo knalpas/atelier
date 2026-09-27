@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { YEAR_MAX, YEAR_MIN, artists, byId, connectedIds, relationsOf, REL_LABEL } from '../data/graph'
+import { YEAR_MAX, YEAR_MIN, artists, byId, connectedIds, relationsOf } from '../data/graph'
 import { rooms } from '../data/rooms'
 import { useNavigation } from '../lib/navigation'
+import { useI18n } from '../lib/i18n'
+import type { Text } from '../lib/i18n'
 
 const LANE_H = 26
 const TOP = 30
@@ -15,13 +17,13 @@ interface Placed {
   labelInside: boolean
 }
 
-function pack(ppy: number): { placed: Placed[]; lanes: number } {
+function pack(ppy: number, tx: Text): { placed: Placed[]; lanes: number } {
   const laneEnds: number[] = []
   const placed: Placed[] = []
   for (const a of artists) {
     const x = (a.born - YEAR_MIN) * ppy
     const w = Math.max((a.died - a.born) * ppy, 4)
-    const labelW = a.short.length * CHAR_W + 14
+    const labelW = tx.short(a).length * CHAR_W + 14
     const labelInside = labelW <= w
     const end = (labelInside ? x + w : x + w + labelW) + 6
     let lane = laneEnds.findIndex((e) => e <= x)
@@ -42,6 +44,7 @@ export function LifespanChart() {
   const [focus, setFocus] = useState<string | null>(null)
   const [atEnd, setAtEnd] = useState(false)
   const { jumpTo } = useNavigation()
+  const { tx } = useI18n()
 
   useEffect(() => {
     const el = wrapRef.current
@@ -53,7 +56,7 @@ export function LifespanChart() {
 
   const span = YEAR_MAX - YEAR_MIN
   const ppy = Math.max(1.4, (width - 8) / span)
-  const { placed, lanes } = useMemo(() => pack(ppy), [ppy])
+  const { placed, lanes } = useMemo(() => pack(ppy, tx), [ppy, tx])
   const linked = useMemo(() => (focus ? connectedIds(focus) : new Set<string>()), [focus])
   const height = TOP + lanes * LANE_H + 8
   const innerW = span * ppy
@@ -66,18 +69,15 @@ export function LifespanChart() {
   return (
     <section className="section section--parchment" id="lifespans">
       <div className="section__head">
-        <p className="section__eyebrow">At a glance</p>
-        <h2 className="section__title">Who lived when</h2>
-        <p className="section__lede">
-          Each bar is a lifetime. Hover or tap one to light up everyone that artist was
-          connected to.
-        </p>
+        <p className="section__eyebrow">{tx.t('chart_eyebrow')}</p>
+        <h2 className="section__title">{tx.t('timeline_long')}</h2>
+        <p className="section__lede">{tx.t('chart_lede')}</p>
       </div>
 
       <div className="chart" ref={wrapRef}>
         {innerW + 90 > width && (
           <p className="chart__hint" aria-hidden="true">
-            Swipe sideways to travel through time <span>→</span>
+            {tx.t('chart_hint')} <span>→</span>
           </p>
         )}
         <div
@@ -119,10 +119,10 @@ export function LifespanChart() {
                   onMouseEnter={() => setFocus(p.id)}
                   onFocus={() => setFocus(p.id)}
                   onClick={() => setFocus(p.id)}
-                  aria-label={`${a.name}, ${a.born}–${a.died}`}
+                  aria-label={`${tx.name(a)}, ${a.born}–${a.died}`}
                 >
                   <span className={`bar__label${p.labelInside ? '' : ' bar__label--out'}`}>
-                    {a.short}
+                    {tx.short(a)}
                   </span>
                 </button>
               )
@@ -134,7 +134,7 @@ export function LifespanChart() {
           {rooms.map((r) => (
             <li key={r.id}>
               <i style={{ background: r.chart }} />
-              {r.title}
+              {tx.room(r).title}
             </li>
           ))}
         </ul>
@@ -143,24 +143,27 @@ export function LifespanChart() {
           {focused ? (
             <>
               <div>
-                <strong>{focused.name}</strong>
+                <strong>{tx.name(focused)}</strong>
                 <span>
                   {' '}
-                  · {focused.born}–{focused.died} · {focused.movement} · {focused.birthplace},{' '}
-                  {focused.country}
+                  · {focused.born}–{focused.died} · {tx.movement(focused.movement)} ·{' '}
+                  {tx.place(focused.birthplace)}, {tx.country(focused.country)}
                 </span>
                 <p className="chart__rels">
                   {relationsOf(focused.id)
-                    .map((r) => `${REL_LABEL[r.kind]} ${r.ids.map((id) => byId.get(id)!.short).join(', ')}`)
+                    .map(
+                      (r) =>
+                        `${tx.rel(r.kind, focused)} ${r.ids.map((id) => tx.short(byId.get(id)!)).join(', ')}`,
+                    )
                     .join(' · ')}
                 </p>
               </div>
               <button type="button" onClick={() => jumpTo(focused.id)}>
-                See in gallery →
+                {tx.t('see_in_gallery')}
               </button>
             </>
           ) : (
-            <span>Hover or tap a bar.</span>
+            <span>{tx.t('chart_idle')}</span>
           )}
         </div>
       </div>

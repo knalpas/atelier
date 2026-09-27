@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { artists } from '../data/graph'
 import { useNavigation } from '../lib/navigation'
 import { Portrait } from './Portrait'
+import { useI18n } from '../lib/i18n'
 
 interface SearchOverlayProps {
   open: boolean
@@ -20,6 +21,7 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
   const { jumpTo } = useNavigation()
+  const { tx } = useI18n()
 
   useEffect(() => {
     if (!open) return
@@ -36,12 +38,8 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
   const results = useMemo(() => {
     const q = normalize(query.trim())
     if (!q) return artists
-    return artists.filter((a) =>
-      normalize(
-        [a.name, a.short, a.movement, a.country, a.birthplace, a.knownFor].join(' '),
-      ).includes(q),
-    )
-  }, [query])
+    return artists.filter((a) => normalize(tx.searchable(a)).includes(q))
+  }, [query, tx])
 
   const choose = (id: string) => {
     onClose()
@@ -55,7 +53,7 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
           className="search"
           role="dialog"
           aria-modal="true"
-          aria-label="Find an artist"
+          aria-label={tx.t('find_label')}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -74,7 +72,7 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
               <input
                 ref={inputRef}
                 type="search"
-                placeholder="Name, movement, country or painting…"
+                placeholder={tx.t('search_placeholder')}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={(e) => {
@@ -82,24 +80,26 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
                 }}
               />
               <button type="button" onClick={onClose} className="search__close">
-                Close
+                {tx.t('close')}
               </button>
             </div>
             <ul className="search__results">
               {results.map((a) => (
                 <li key={a.id}>
                   <button type="button" onClick={() => choose(a.id)}>
-                    <Portrait id={a.id} name={a.name} size="thumb" />
+                    <Portrait id={a.id} name={tx.name(a)} size="thumb" />
                     <span className="search__text">
-                      <strong>{a.name}</strong>
+                      <strong>{tx.name(a)}</strong>
                       <span>
-                        {a.born}–{a.died} · {a.movement} · {a.country}
+                        {a.born}–{a.died} · {tx.movement(a.movement)} · {tx.country(a.country)}
                       </span>
                     </span>
                   </button>
                 </li>
               ))}
-              {results.length === 0 && <li className="search__empty">No artist matches “{query}”.</li>}
+              {results.length === 0 && (
+                <li className="search__empty">{tx.t('no_match', { q: query })}</li>
+              )}
             </ul>
           </motion.div>
         </motion.div>

@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react'
 import { artists } from './data/graph'
 import { rooms } from './data/rooms'
 import { NavigationProvider } from './lib/navigation'
+import { I18nProvider, useI18n } from './lib/i18n'
 import { Hero } from './components/Hero'
 import { NavBar } from './components/NavBar'
 import { RoomSection } from './components/RoomSection'
@@ -11,6 +12,15 @@ import { SearchOverlay } from './components/SearchOverlay'
 import { BackPill } from './components/BackPill'
 
 export default function App() {
+  return (
+    <I18nProvider>
+      <Gallery />
+    </I18nProvider>
+  )
+}
+
+function Gallery() {
+  const { tx } = useI18n()
   const [searchOpen, setSearchOpen] = useState(false)
   const closeSearch = useCallback(() => setSearchOpen(false), [])
 
@@ -33,17 +43,13 @@ export default function App() {
 
       <footer className="footer">
         <p className="footer__title">Lineage</p>
+        <p>{tx.t('footer_about')}</p>
         <p>
-          A personal atlas of connections between painters. Relationships are simplified;
-          “inspired by” marks documented admiration or clear stylistic debt.
-        </p>
-        <p>
-          Portraits courtesy of{' '}
+          {tx.t('footer_portraits_before')}{' '}
           <a href="https://commons.wikimedia.org" target="_blank" rel="noreferrer">
             Wikimedia Commons
           </a>{' '}
-          (public domain and Creative Commons licences; see each artist’s Wikipedia page for
-          details).
+          {tx.t('footer_portraits_after')}
         </p>
       </footer>
 

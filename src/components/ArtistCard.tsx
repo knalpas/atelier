@@ -1,7 +1,8 @@
 import { memo } from 'react'
 import type { GalleryArtist } from '../data/graph'
-import { REL_LABEL, YEAR_MAX, YEAR_MIN, byId, relationsOf, storiesOf } from '../data/graph'
+import { YEAR_MAX, YEAR_MIN, byId, relationsOf, storiesOf } from '../data/graph'
 import { useNavigation } from '../lib/navigation'
+import { useI18n } from '../lib/i18n'
 import { PersonLink } from './PersonLink'
 import { Portrait } from './Portrait'
 
@@ -37,6 +38,8 @@ function LifeLine({ born, died }: { born: number; died: number }) {
 
 function ArtistCardImpl({ artist, index, total }: ArtistCardProps) {
   const { highlighted } = useNavigation()
+  const { tx } = useI18n()
+  const name = tx.name(artist)
   const relations = relationsOf(artist.id)
   const stories = storiesOf(artist.id)
   const isLit = highlighted === artist.id
@@ -45,36 +48,36 @@ function ArtistCardImpl({ artist, index, total }: ArtistCardProps) {
     <article
       id={`artist-${artist.id}`}
       className={`card${isLit ? ' card--lit' : ''}`}
-      aria-label={artist.name}
+      aria-label={name}
     >
       <div className="card__count" aria-hidden="true">
         {index + 1} / {total}
       </div>
-      <Portrait id={artist.id} name={artist.name} />
+      <Portrait id={artist.id} name={name} />
 
       <div className="label">
-        <p className="label__movement">{artist.movement}</p>
-        <h3 className="label__name">{artist.name}</h3>
+        <p className="label__movement">{tx.movement(artist.movement)}</p>
+        <h3 className="label__name">{name}</h3>
         <p className="label__facts">
           <span>
             {artist.born}–{artist.died}
           </span>
           <span className="label__dot">·</span>
           <span>
-            {artist.birthplace}, {artist.country}
+            {tx.place(artist.birthplace)}, {tx.country(artist.country)}
           </span>
         </p>
         <LifeLine born={artist.born} died={artist.died} />
         <p className="label__known">
-          <span>Known for</span> <em>{artist.knownFor}</em>
+          <span>{tx.t('known_for')}</span> <em>{tx.knownFor(artist)}</em>
         </p>
-        <p className="label__blurb">{artist.blurb}</p>
+        <p className="label__blurb">{tx.blurb(artist)}</p>
 
         {relations.length > 0 && (
           <dl className="ties">
             {relations.map((rel) => (
               <div key={rel.kind} className={`ties__row ties__row--${rel.kind}`}>
-                <dt>{REL_LABEL[rel.kind]}</dt>
+                <dt>{tx.rel(rel.kind, artist)}</dt>
                 <dd>
                   {rel.ids.map((id, i) => (
                     <span key={id}>
@@ -92,8 +95,10 @@ function ArtistCardImpl({ artist, index, total }: ArtistCardProps) {
           <div className="stories">
             {stories.map((story) => (
               <p key={story.other}>
-                <span className="stories__who">With {byId.get(story.other)?.short}:</span>{' '}
-                {story.text}
+                <span className="stories__who">
+                  {tx.t('story_with', { name: tx.short(byId.get(story.other)!) })}
+                </span>{' '}
+                {tx.story(story.owner, story.about, story.text)}
               </p>
             ))}
           </div>
@@ -101,11 +106,11 @@ function ArtistCardImpl({ artist, index, total }: ArtistCardProps) {
 
         <a
           className="label__more"
-          href={`https://en.wikipedia.org/wiki/${encodeURIComponent(artist.wiki.replace(/ /g, '_'))}`}
+          href={tx.wiki(artist)}
           target="_blank"
           rel="noreferrer"
         >
-          Read more on Wikipedia ↗
+          {tx.t('more_wiki')}
         </a>
       </div>
     </article>

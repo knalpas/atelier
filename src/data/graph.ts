@@ -14,19 +14,6 @@ export type RelKind =
   | 'influences'
   | 'influenced'
 
-export const REL_LABEL: Record<RelKind, string> = {
-  teachers: 'Trained by',
-  students: 'Mentor to',
-  partners: 'Partner of',
-  collaborators: 'Worked with',
-  modelled: 'Posed for',
-  models: 'Painted',
-  rivals: 'Rival of',
-  friends: 'Friends with',
-  influences: 'Inspired by',
-  influenced: 'Inspired',
-}
-
 export interface GalleryArtist extends Artist {
   room: Room
 }
@@ -112,6 +99,8 @@ export function noteBetween(a: string, b: string): string | undefined {
 
 export interface Story {
   other: string
+  owner: string
+  about: string
   text: string
 }
 
@@ -123,12 +112,12 @@ export function storiesOf(id: string): Story[] {
   for (const [other, text] of Object.entries(me.notes ?? {})) {
     if (!byId.has(other)) continue
     seen.add(other)
-    stories.push({ other, text })
+    stories.push({ other, owner: id, about: other, text })
   }
   for (const a of artists) {
     if (a.id === id || seen.has(a.id)) continue
     const text = a.notes?.[id]
-    if (text) stories.push({ other: a.id, text })
+    if (text) stories.push({ other: a.id, owner: a.id, about: id, text })
   }
   return stories
 }
