@@ -1,8 +1,8 @@
-# Lineage
+# Atelier
 
 A museum-style family tree of painting: 94 artists from Giotto to Basquiat, arranged in six gallery rooms, each with its own wall colour.
 
-**Live site:** https://knalpas.github.io/lineage/
+**Live site:** https://knalpas.github.io/atelier/
 
 Every artist card shows:
 

@@ -16,7 +16,7 @@ export type Lang = 'en' | 'fr'
 
 const UI = {
   en: {
-    doc_title: 'Lineage · A family tree of painting',
+    doc_title: 'Atelier · A family tree of painting',
     lang_label: 'Language',
     eyebrow: 'A family tree of painting',
     lede: 'Seven centuries of painters: who taught whom, who inspired whom, and who couldn’t stand each other.',
@@ -67,7 +67,7 @@ const UI = {
       '(public domain and Creative Commons licences; see each artist’s Wikipedia page for details).',
   },
   fr: {
-    doc_title: 'Lineage · Un arbre généalogique de la peinture',
+    doc_title: 'Atelier · Un arbre généalogique de la peinture',
     lang_label: 'Langue',
     eyebrow: 'Un arbre généalogique de la peinture',
     lede: 'Sept siècles de peintres : qui a formé qui, qui a inspiré qui, et qui ne pouvait pas supporter qui.',
@@ -234,13 +234,13 @@ const fr: Text = {
 }
 
 const TEXTS: Record<Lang, Text> = { en, fr }
-const STORAGE_KEY = 'lineage-lang'
+const STORAGE_KEY = 'atelier-lang'
 
 function initialLang(): Lang {
   const param = new URLSearchParams(window.location.search).get('lang')
   if (param === 'en' || param === 'fr') return param
   try {
-    const saved = localStorage.getItem(STORAGE_KEY)
+    const saved = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem('lineage-lang')
     if (saved === 'en' || saved === 'fr') return saved
   } catch {
     // storage can be unavailable in private mode
@@ -290,12 +290,12 @@ if (import.meta.env?.DEV) {
   void import('../data/artists').then(({ artists }) => {
     for (const a of artists) {
       const f = FR_ARTISTS[a.id]
-      if (!f) console.warn(`[lineage] missing French text for ${a.id}`)
+      if (!f) console.warn(`[atelier] missing French text for ${a.id}`)
       for (const other of Object.keys(a.notes ?? {})) {
-        if (!f?.notes?.[other]) console.warn(`[lineage] missing French note ${a.id} → ${other}`)
+        if (!f?.notes?.[other]) console.warn(`[atelier] missing French note ${a.id} → ${other}`)
       }
-      if (!FR_MOVEMENTS[a.movement]) console.warn(`[lineage] missing French movement ${a.movement}`)
-      if (!FR_COUNTRIES[a.country]) console.warn(`[lineage] missing French country ${a.country}`)
+      if (!FR_MOVEMENTS[a.movement]) console.warn(`[atelier] missing French movement ${a.movement}`)
+      if (!FR_COUNTRIES[a.country]) console.warn(`[atelier] missing French country ${a.country}`)
     }
   })
 }

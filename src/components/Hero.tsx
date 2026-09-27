@@ -76,7 +76,7 @@ export function Hero() {
         transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
       >
         <p className="hero__eyebrow">{tx.t('eyebrow')}</p>
-        <h1 className="hero__title">Lineage</h1>
+        <h1 className="hero__title">Atelier</h1>
         <p className="hero__lede">{tx.t('lede')}</p>
         <p className="hero__stats">
           <span>

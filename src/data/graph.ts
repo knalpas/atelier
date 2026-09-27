@@ -148,11 +148,11 @@ if (import.meta.env?.DEV) {
   for (const a of rawArtists) {
     for (const key of keys) {
       for (const ref of (a[key] as string[] | undefined) ?? []) {
-        if (!byId.has(ref)) console.warn(`[lineage] ${a.id}.${key} → unknown "${ref}"`)
+        if (!byId.has(ref)) console.warn(`[atelier] ${a.id}.${key} → unknown "${ref}"`)
       }
     }
     for (const ref of Object.keys(a.notes ?? {})) {
-      if (!byId.has(ref)) console.warn(`[lineage] ${a.id}.notes → unknown "${ref}"`)
+      if (!byId.has(ref)) console.warn(`[atelier] ${a.id}.notes → unknown "${ref}"`)
     }
   }
 }

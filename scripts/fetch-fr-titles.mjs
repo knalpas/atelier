@@ -10,7 +10,7 @@ const entries = [...source.matchAll(/id: '([^']+)',[\s\S]*?wiki: (['"])(.+?)\2,/
   wiki: m[3],
 }))
 
-const UA = 'LineageArtAtlas/1.0 (https://github.com/knalpas/lineage)'
+const UA = 'AtelierArtAtlas/1.0 (https://github.com/knalpas/atelier)'
 const result = {}
 
 for (let i = 0; i < entries.length; i += 40) {

@@ -54,7 +54,7 @@ export function NavBar({ onSearch }: NavBarProps) {
   return (
     <nav className={`nav${visible ? ' nav--visible' : ''}`} aria-label={tx.t('nav_label')}>
       <a className="nav__brand" href="#top">
-        Lineage
+        Atelier
       </a>
       <ul className="nav__links" ref={listRef}>
         {links.map((link) => (

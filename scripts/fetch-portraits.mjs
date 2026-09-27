@@ -15,7 +15,7 @@ const entries = [...source.matchAll(/id: '([^']+)',[\s\S]*?wiki: (['"])(.+?)\2,/
   wiki: m[3],
 }))
 
-const UA = 'LineageArtAtlas/1.0 (https://github.com/knalpas/lineage)'
+const UA = 'AtelierArtAtlas/1.0 (https://github.com/knalpas/atelier)'
 const outDir = path.join(root, 'public/portraits')
 await mkdir(outDir, { recursive: true })
 

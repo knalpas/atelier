@@ -42,7 +42,7 @@ function Gallery() {
       </main>
 
       <footer className="footer">
-        <p className="footer__title">Lineage</p>
+        <p className="footer__title">Atelier</p>
         <p>{tx.t('footer_about')}</p>
         <p>
           {tx.t('footer_portraits_before')}{' '}
