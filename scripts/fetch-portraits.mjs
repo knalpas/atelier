@@ -51,8 +51,15 @@ async function commonsThumb(fileTitle, width) {
   }
 }
 
+const portraitsJson = path.join(root, 'src/data/portraits.json')
+const existing = JSON.parse(await readFile(portraitsJson, 'utf8').catch(() => '{}'))
+
 const result = {}
 for (const { id, wiki } of entries) {
+  if (existing[id] && existsSync(path.join(root, 'public', existing[id].src))) {
+    result[id] = existing[id]
+    continue
+  }
   try {
     let fileTitle = overrides[id]
     if (!fileTitle) {
@@ -93,5 +100,5 @@ for (const { id, wiki } of entries) {
   }
 }
 
-await writeFile(path.join(root, 'src/data/portraits.json'), JSON.stringify(result, null, 2) + '\n')
+await writeFile(portraitsJson, JSON.stringify(result, null, 2) + '\n')
 console.log(`\n${Object.keys(result).length}/${entries.length} portraits saved`)

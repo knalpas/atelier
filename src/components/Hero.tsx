@@ -38,10 +38,10 @@ const SALON = [
   'toulouse',
   'delacroix',
   'modigliani',
-  'reynolds',
+  'valadon',
   'courbet',
   'friedrich',
-  'bosch',
+  'holbein',
   'seurat',
 ]
 

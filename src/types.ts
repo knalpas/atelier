@@ -26,6 +26,7 @@ export interface Artist {
   rivals?: string[]
   collaborators?: string[]
   partners?: string[]
+  modelled?: string[]
   notes?: Record<string, string>
 }
 

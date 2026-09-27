@@ -29,7 +29,7 @@ export const rooms: Room[] = [
     span: 'c. 1590 – 1700',
     intro:
       'Caravaggio’s dramatic light spreads across Europe, from Rome to Madrid, Antwerp and the Dutch Republic.',
-    movements: ['Baroque', 'Dutch Golden Age'],
+    movements: ['Baroque', 'Dutch Golden Age', 'French Classicism'],
     wall: '#4b1b1d',
     ink: '#f3e6d1',
     muted: 'rgba(243, 230, 209, 0.68)',
@@ -43,7 +43,7 @@ export const rooms: Room[] = [
     span: 'c. 1720 – 1860',
     intro:
       'Academies, revolutions and storms. Neoclassical line against Romantic colour, and the first Realists turn to ordinary life.',
-    movements: ['Rococo', 'Neoclassicism', 'Romanticism', 'Ukiyo-e', 'Realism'],
+    movements: ['Rococo', 'Neoclassicism', 'Romanticism', 'Barbizon School', 'Ukiyo-e', 'Realism'],
     wall: '#1c2940',
     ink: '#ece4d4',
     muted: 'rgba(236, 228, 212, 0.68)',
@@ -57,7 +57,7 @@ export const rooms: Room[] = [
     span: 'c. 1860 – 1905',
     intro:
       'In Paris, a close-knit band of friends paints outdoors and exhibits on its own terms. Their students push colour further still.',
-    movements: ['Impressionism', 'Neo-Impressionism', 'Post-Impressionism'],
+    movements: ['Impressionism', 'Tonalism', 'Society Portraiture', 'Neo-Impressionism', 'Post-Impressionism', 'Les Nabis'],
     wall: '#d3dbd5',
     ink: '#1e2926',
     muted: 'rgba(30, 41, 38, 0.66)',
@@ -76,6 +76,8 @@ export const rooms: Room[] = [
       'Expressionism',
       'Fauvism',
       'Cubism',
+      'Suprematism',
+      'Naïve Art',
       'Der Blaue Reiter',
       'De Stijl',
       'Dada',

@@ -1,6 +1,6 @@
 # Lineage
 
-A museum-style family tree of painting: 77 artists from Giotto to Basquiat, arranged in six gallery rooms, each with its own wall colour.
+A museum-style family tree of painting: 94 artists from Giotto to Basquiat, arranged in six gallery rooms, each with its own wall colour.
 
 **Live site:** https://knalpas.github.io/lineage/
 

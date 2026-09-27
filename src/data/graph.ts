@@ -7,6 +7,8 @@ export type RelKind =
   | 'students'
   | 'partners'
   | 'collaborators'
+  | 'modelled'
+  | 'models'
   | 'rivals'
   | 'friends'
   | 'influences'
@@ -17,6 +19,8 @@ export const REL_LABEL: Record<RelKind, string> = {
   students: 'Mentor to',
   partners: 'Partner of',
   collaborators: 'Worked with',
+  modelled: 'Posed for',
+  models: 'Painted',
   rivals: 'Rival of',
   friends: 'Friends with',
   influences: 'Inspired by',
@@ -33,7 +37,8 @@ export const artists: GalleryArtist[] = rawArtists
 
 export const byId = new Map(artists.map((a) => [a.id, a]))
 
-const SYMMETRIC: RelKind[] = ['partners', 'collaborators', 'rivals', 'friends']
+const SYMMETRIC: RelKind[] = ['partners', 'collaborators']
+const SYMMETRIC_LATE: RelKind[] = ['rivals', 'friends']
 
 function listed(a: Artist, key: keyof Artist): string[] {
   return ((a[key] as string[] | undefined) ?? []).filter((id) => byId.has(id))
@@ -67,16 +72,25 @@ export function relationsOf(id: string): Relation[] {
     kind: 'students',
     ids: take(others.filter((o) => listed(o, 'teachers').includes(id)).map((o) => o.id)),
   })
-  for (const kind of SYMMETRIC) {
-    const key = kind as keyof Artist
-    result.push({
-      kind,
-      ids: take([
-        ...listed(me, key),
-        ...others.filter((o) => listed(o, key).includes(id)).map((o) => o.id),
-      ]),
-    })
+  const pushSymmetric = (kinds: RelKind[]) => {
+    for (const kind of kinds) {
+      const key = kind as keyof Artist
+      result.push({
+        kind,
+        ids: take([
+          ...listed(me, key),
+          ...others.filter((o) => listed(o, key).includes(id)).map((o) => o.id),
+        ]),
+      })
+    }
   }
+  pushSymmetric(SYMMETRIC)
+  result.push({ kind: 'modelled', ids: take(listed(me, 'modelled')) })
+  result.push({
+    kind: 'models',
+    ids: take(others.filter((o) => listed(o, 'modelled').includes(id)).map((o) => o.id)),
+  })
+  pushSymmetric(SYMMETRIC_LATE)
   result.push({ kind: 'influences', ids: take(listed(me, 'influences')) })
   result.push({
     kind: 'influenced',
@@ -140,6 +154,7 @@ if (import.meta.env?.DEV) {
     'rivals',
     'collaborators',
     'partners',
+    'modelled',
   ]
   for (const a of rawArtists) {
     for (const key of keys) {

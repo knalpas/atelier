@@ -460,5 +460,107 @@
     "file": "https://commons.wikimedia.org/wiki/File:Jean-Michel_Basquiat_passport_(cropped).jpg",
     "title": "Jean-Michel_Basquiat_passport_(cropped).jpg",
     "license": "Public domain"
+  },
+  "piero": {
+    "src": "portraits/piero.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Delle_vite_de%27_pi%C3%B9_eccellenti_pittori,_scultori,_et_architetti_(1648)_(14799608033).jpg",
+    "title": "Delle_vite_de'_più_eccellenti_pittori,_scultori,_et_architetti_(1648)_(14799608033).jpg",
+    "license": "Public domain"
+  },
+  "holbein": {
+    "src": "portraits/holbein.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Hans_Holbein_the_Younger,_self-portrait.jpg",
+    "title": "Hans_Holbein_the_Younger,_self-portrait.jpg",
+    "license": "Public domain"
+  },
+  "hals": {
+    "src": "portraits/hals.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:After_Frans_Hals_-_Portrait_of_Frans_Hals_-_Indianapolis.jpg",
+    "title": "After_Frans_Hals_-_Portrait_of_Frans_Hals_-_Indianapolis.jpg",
+    "license": "Public domain"
+  },
+  "poussin": {
+    "src": "portraits/poussin.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_078.jpg",
+    "title": "Nicolas_Poussin_078.jpg",
+    "license": "Public domain"
+  },
+  "watteau": {
+    "src": "portraits/watteau.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:(Treviso)_The_painter_Antoine_Watteau_by_Rosalba_Carriera_-_Museo_civico_di_Santa_Caterina.jpg",
+    "title": "(Treviso)_The_painter_Antoine_Watteau_by_Rosalba_Carriera_-_Museo_civico_di_Santa_Caterina.jpg",
+    "license": "CC BY-SA 4.0"
+  },
+  "fragonard": {
+    "src": "portraits/fragonard.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Jean-Honor%C3%A9_Fragonard_-_Self-portrait_with_smiling_face.jpg",
+    "title": "Jean-Honoré_Fragonard_-_Self-portrait_with_smiling_face.jpg",
+    "license": "Public domain"
+  },
+  "corot": {
+    "src": "portraits/corot.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Camille_Corot_by_%C3%89tienne_Carjat.jpg",
+    "title": "Camille_Corot_by_Étienne_Carjat.jpg",
+    "license": "Public domain"
+  },
+  "millet": {
+    "src": "portraits/millet.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_by_Nadar,_Metropolitan_Museum_copy.jpg",
+    "title": "Jean-François_Millet_by_Nadar,_Metropolitan_Museum_copy.jpg",
+    "license": "Public domain"
+  },
+  "whistler": {
+    "src": "portraits/whistler.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Whistler_Selbstportr%C3%A4t.jpg",
+    "title": "Whistler_Selbstporträt.jpg",
+    "license": "Public domain"
+  },
+  "sisley": {
+    "src": "portraits/sisley.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Alfred_Sisley_photo_full.jpg",
+    "title": "Alfred_Sisley_photo_full.jpg",
+    "license": "Public domain"
+  },
+  "rousseau": {
+    "src": "portraits/rousseau.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Rousseau_Joyeux_Farceurs_Dornac_crop.jpg",
+    "title": "Rousseau_Joyeux_Farceurs_Dornac_crop.jpg",
+    "license": "Public domain"
+  },
+  "caillebotte": {
+    "src": "portraits/caillebotte.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Gustave_Caillebotte_photo_c1878.jpg",
+    "title": "Gustave_Caillebotte_photo_c1878.jpg",
+    "license": "Public domain"
+  },
+  "sargent": {
+    "src": "portraits/sargent.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:John_Singer_Sargent_1903.jpg",
+    "title": "John_Singer_Sargent_1903.jpg",
+    "license": "Public domain"
+  },
+  "valadon": {
+    "src": "portraits/valadon.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Suzanne_Valadon_-_Self-Portrait_-_Google_Art_Project.jpg",
+    "title": "Suzanne_Valadon_-_Self-Portrait_-_Google_Art_Project.jpg",
+    "license": "Public domain"
+  },
+  "bonnard": {
+    "src": "portraits/bonnard.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:T%C3%AAte_de_Bonnard_(Portrait_photograph_of_Pierre_Bonnard),_c.1899,_Mus%C3%A9e_d%27Orsay,_restaur%C3%A9e.jpg",
+    "title": "Tête_de_Bonnard_(Portrait_photograph_of_Pierre_Bonnard),_c.1899,_Musée_d'Orsay,_restaurée.jpg",
+    "license": "CC BY-SA 4.0"
+  },
+  "malevich": {
+    "src": "portraits/malevich.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Casimir_Malevich_photo.jpg",
+    "title": "Casimir_Malevich_photo.jpg",
+    "license": "Public domain"
+  },
+  "utrillo": {
+    "src": "portraits/utrillo.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Maurice_Utrillo,_ca._1915-1920.jpg",
+    "title": "Maurice_Utrillo,_ca._1915-1920.jpg",
+    "license": "Public domain"
   }
 }
