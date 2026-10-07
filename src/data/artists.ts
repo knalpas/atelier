@@ -1752,7 +1752,8 @@ export const artists: Artist[] = [
     blurb:
       'An American born in Florence, the most fashionable portraitist of his age, and a brilliant watercolourist.',
     influences: ['velazquez', 'hals'],
-    friends: ['monet', 'boldini'],
+    friends: ['monet'],
+    rivals: ['boldini'],
     notes: {
       monet: 'He visited Monet at Giverny and painted him at his easel in the open air.',
       boldini: 'Rival society portraitists in Paris and London; both chased the same glittering sitters.',
@@ -1974,7 +1975,7 @@ export const artists: Artist[] = [
     lat: 44.84,
     lon: 11.62,
     movement: 'Society Portraiture',
-    knownFor: 'Portrait of Madame X (Marthe de Florian)',
+    knownFor: 'Portrait of Marthe de Florian',
     blurb:
       'The “master of swish”: Belle Époque Paris seen in swirling brushstrokes and elongated elegance.',
     influences: ['sargent', 'manet'],
@@ -2167,8 +2168,7 @@ export const artists: Artist[] = [
     movement: 'Nordic Abstraction',
     knownFor: 'Gold and silver horizon paintings',
     blurb:
-      'A Norwegian–Swedish abstract painter of horizons, mountains and metallic light. Long overshadowed, now central to Nordic modernism.',
-    influences: ['munch'],
+      'A Norwegian–Swedish abstract painter of horizons, mountains and metallic light, and the wife of Hans Hartung. Long overshadowed, now central to Nordic modernism.',
   },
   {
     id: 'soulages',
@@ -2231,6 +2231,7 @@ export const artists: Artist[] = [
     wiki: 'Gerhard Richter',
     born: 1932,
     died: 2026,
+    living: true,
     birthplace: 'Dresden',
     country: 'Germany',
     lat: 51.05,
@@ -2248,6 +2249,7 @@ export const artists: Artist[] = [
     wiki: 'Martial Raysse',
     born: 1936,
     died: 2026,
+    living: true,
     birthplace: 'Golfe-Juan',
     country: 'France',
     lat: 43.57,
@@ -2257,7 +2259,6 @@ export const artists: Artist[] = [
     blurb:
       'A Nouveau Réaliste who neon-lit classical beauty and consumer colour, then returned to a freer, mythic figuration.',
     influences: ['ingres', 'matisse'],
-    friends: ['fromanger'],
   },
   {
     id: 'fromanger',
@@ -2275,7 +2276,6 @@ export const artists: Artist[] = [
     blurb:
       'A leading figure of Figuration Narrative. He flooded photographs of the street with flat, political colour.',
     influences: ['warhol', 'matisse'],
-    friends: ['raysse'],
   },
   {
     id: 'garouste',
@@ -2284,11 +2284,12 @@ export const artists: Artist[] = [
     wiki: 'Gérard Garouste',
     born: 1946,
     died: 2026,
+    living: true,
     birthplace: 'Paris',
     country: 'France',
     lat: 48.86,
     lon: 2.35,
-    movement: 'Figuration Libre',
+    movement: 'Contemporary Figuration',
     knownFor: 'Mythological and biblical tableaux',
     blurb:
       'A major figure of French figuration since the 1980s. He paints myths, scripture and donkeys in a restless, classical hand.',

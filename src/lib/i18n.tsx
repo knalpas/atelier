@@ -41,6 +41,7 @@ const UI = {
     back_to: '← Back to {name}',
     dismiss: 'Dismiss',
     portrait_alt: 'Portrait of {name}',
+    work_not_portrait: 'A painting, not a portrait',
     search_placeholder: 'Name, movement, country or painting…',
     close: 'Close',
     no_match: 'No artist matches “{q}”.',
@@ -92,6 +93,7 @@ const UI = {
     back_to: '← Retour à {name}',
     dismiss: 'Fermer',
     portrait_alt: 'Portrait de {name}',
+    work_not_portrait: 'Un tableau, pas un portrait',
     search_placeholder: 'Nom, mouvement, pays ou tableau…',
     close: 'Fermer',
     no_match: 'Aucun artiste ne correspond à « {q} ».',
@@ -201,8 +203,7 @@ const en: Text = {
   rel: (kind) => REL_EN[kind],
   story: (_owner, _about, fallback) => fallback,
   wiki: (a) => `https://en.wikipedia.org/wiki/${encodeURIComponent(a.wiki.replace(/ /g, '_'))}`,
-  lifespan: (a) =>
-    a.died >= new Date().getFullYear() ? `${a.born}–present` : `${a.born}–${a.died}`,
+  lifespan: (a) => (a.living ? `${a.born}–present` : `${a.born}–${a.died}`),
   searchable: (a) => [a.name, a.short, a.movement, a.country, a.birthplace, a.knownFor].join(' '),
 }
 
@@ -225,8 +226,7 @@ const fr: Text = {
     WIKI_FR[a.id]
       ? `https://fr.wikipedia.org/wiki/${encodeURIComponent(WIKI_FR[a.id].replace(/ /g, '_'))}`
       : en.wiki(a),
-  lifespan: (a) =>
-    a.died >= new Date().getFullYear() ? `${a.born} – aujourd’hui` : `${a.born}–${a.died}`,
+  lifespan: (a) => (a.living ? `${a.born} – aujourd’hui` : `${a.born}–${a.died}`),
   searchable: (a) =>
     [
       en.searchable(a),

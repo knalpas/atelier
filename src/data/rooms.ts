@@ -125,7 +125,7 @@ export const rooms: Room[] = [
       'School of London',
       'Nouveau Réalisme',
       'Figuration Narrative',
-      'Figuration Libre',
+      'Contemporary Figuration',
       'Nordic Abstraction',
       'Contemporary Painting',
     ],

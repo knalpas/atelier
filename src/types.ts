@@ -13,7 +13,9 @@ export interface Artist {
   short: string
   wiki: string
   born: number
+  /** Year of death. Ignored when `living` is set. */
   died: number
+  living?: boolean
   birthplace: string
   country: string
   lat: number

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { YEAR_MAX, YEAR_MIN, artists, byId, connectedIds, relationsOf } from '../data/graph'
+import { YEAR_MAX, YEAR_MIN, artists, byId, connectedIds, lifeEnd, relationsOf } from '../data/graph'
 import { rooms } from '../data/rooms'
 import { useNavigation } from '../lib/navigation'
 import { useI18n } from '../lib/i18n'
@@ -22,7 +22,7 @@ function pack(ppy: number, tx: Text): { placed: Placed[]; lanes: number } {
   const placed: Placed[] = []
   for (const a of artists) {
     const x = (a.born - YEAR_MIN) * ppy
-    const w = Math.max((a.died - a.born) * ppy, 4)
+    const w = Math.max((lifeEnd(a) - a.born) * ppy, 4)
     const labelW = tx.short(a).length * CHAR_W + 14
     const labelInside = labelW <= w
     const end = (labelInside ? x + w : x + w + labelW) + 6

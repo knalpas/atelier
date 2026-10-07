@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { GalleryArtist } from '../data/graph'
-import { YEAR_MAX, YEAR_MIN, byId, relationsOf, storiesOf } from '../data/graph'
+import { YEAR_MAX, YEAR_MIN, byId, lifeEnd, relationsOf, storiesOf } from '../data/graph'
 import { useNavigation } from '../lib/navigation'
 import { useI18n } from '../lib/i18n'
 import { PersonLink } from './PersonLink'
@@ -65,7 +65,7 @@ function ArtistCardImpl({ artist, index, total }: ArtistCardProps) {
             {tx.place(artist.birthplace)}, {tx.country(artist.country)}
           </span>
         </p>
-        <LifeLine born={artist.born} died={artist.died} />
+        <LifeLine born={artist.born} died={lifeEnd(artist)} />
         <p className="label__known">
           <span>{tx.t('known_for')}</span> <em>{tx.knownFor(artist)}</em>
         </p>

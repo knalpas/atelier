@@ -122,7 +122,7 @@ export const FR_MOVEMENTS: Record<string, string> = {
   'School of London': 'École de Londres',
   'Nouveau Réalisme': 'Nouveau réalisme',
   'Figuration Narrative': 'Figuration narrative',
-  'Figuration Libre': 'Figuration libre',
+  'Contemporary Figuration': 'Figuration contemporaine',
   'Nordic Abstraction': 'Abstraction nordique',
   'Contemporary Painting': 'Peinture contemporaine',
 }
@@ -930,7 +930,7 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
   boldini: {
     knownFor: 'Portrait de Madame de Florian',
     blurb:
-      'Le « maître du swish » : le Paris de la Belle Époque en touches tourbillonnantes et élégance allongée.',
+      'Le Paris de la Belle Époque, en touches tourbillonnantes et en silhouettes allongées.',
   },
   backer: {
     knownFor: 'Intérieur bleu',
@@ -1003,7 +1003,7 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
   bergman: {
     knownFor: 'Horizons d’or et d’argent',
     blurb:
-      'Peintre abstraite norvégéo-suédoise des horizons, des montagnes et de la lumière métallique. Longtemps éclipsée, aujourd’hui centrale dans le modernisme nordique.',
+      'Peintre abstraite norvégéo-suédoise des horizons, des montagnes et de la lumière métallique, et l’épouse de Hans Hartung. Longtemps éclipsée, aujourd’hui centrale dans le modernisme nordique.',
   },
   soulages: {
     knownFor: 'Outrenoir',
@@ -1032,7 +1032,7 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
   raysse: {
     knownFor: 'Made in Japan – La Grande Odalisque',
     blurb:
-      'Nouveau réaliste qui néonisa la beauté classique et la couleur de consommation, avant de revenir à une figuration plus libre et mythique.',
+      'Nouveau réaliste qui a passé la beauté classique et la couleur publicitaire au néon, avant de revenir à une figuration plus libre et mythique.',
   },
   fromanger: {
     name: 'Gérard Fromanger',

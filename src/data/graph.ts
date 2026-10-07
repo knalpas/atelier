@@ -133,7 +133,12 @@ export const pairCount = (() => {
 })()
 
 export const YEAR_MIN = Math.floor(Math.min(...artists.map((a) => a.born)) / 50) * 50
-export const YEAR_MAX = Math.ceil(Math.max(...artists.map((a) => a.died)) / 50) * 50
+/** Last year of a life. Living artists run up to the current year, not a stored death date. */
+export function lifeEnd(a: { died: number; living?: boolean }): number {
+  return a.living ? new Date().getFullYear() : a.died
+}
+
+export const YEAR_MAX = Math.ceil(Math.max(...artists.map((a) => lifeEnd(a))) / 50) * 50
 
 if (import.meta.env?.DEV) {
   const keys: (keyof Artist)[] = [

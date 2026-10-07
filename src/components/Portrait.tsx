@@ -48,6 +48,9 @@ export function Portrait({ id, name, size = 'card', eager = false }: PortraitPro
             {initials(name)}
           </div>
         )}
+        {size === 'card' && ARTWORK_IDS.has(id) && portrait && !failed && (
+          <span className="frame__kind">{tx.t('work_not_portrait')}</span>
+        )}
       </div>
     </div>
   )
