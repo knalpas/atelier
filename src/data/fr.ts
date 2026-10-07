@@ -16,6 +16,12 @@ export const FR_FEMALE = new Set([
   'kahlo',
   'krasner',
   'valadon',
+  'vigee',
+  'bonheur',
+  'backer',
+  'munter',
+  'sonia-delaunay',
+  'bergman',
 ])
 
 export const FR_ROOMS: Record<RoomId, { title: string; short: string; span: string; intro: string }> = {
@@ -61,6 +67,13 @@ export const FR_ROOMS: Record<RoomId, { title: string; short: string; span: stri
     intro:
       'Après la guerre, le centre de gravité se déplace à New York. L’abstraction, puis le pop, puis la rue.',
   },
+  present: {
+    title: 'Après 1945',
+    short: 'Après 1945',
+    span: 'v. 1945 – aujourd’hui',
+    intro:
+      'L’Europe répond à New York avec ses propres voix : le noir comme lumière, la chair comme fait, et le retour de la figure sous bien des noms.',
+  },
 }
 
 export const FR_MOVEMENTS: Record<string, string> = {
@@ -103,6 +116,15 @@ export const FR_MOVEMENTS: Record<string, string> = {
   'Abstract Expressionism': 'Expressionnisme abstrait',
   'Pop Art': 'Pop art',
   'Neo-Expressionism': 'Néo-expressionnisme',
+  Naturalism: 'Naturalisme',
+  Orphism: 'Orphisme',
+  'Art Informel': 'Art informel',
+  'School of London': 'École de Londres',
+  'Nouveau Réalisme': 'Nouveau réalisme',
+  'Figuration Narrative': 'Figuration narrative',
+  'Figuration Libre': 'Figuration libre',
+  'Nordic Abstraction': 'Abstraction nordique',
+  'Contemporary Painting': 'Peinture contemporaine',
 }
 
 export const FR_COUNTRIES: Record<string, string> = {
@@ -126,6 +148,7 @@ export const FR_COUNTRIES: Record<string, string> = {
   Belarus: 'Biélorussie',
   Latvia: 'Lettonie',
   Ukraine: 'Ukraine',
+  Sweden: 'Suède',
 }
 
 export const FR_PLACES: Record<string, string> = {
@@ -143,6 +166,20 @@ export const FR_PLACES: Record<string, string> = {
   Barcelona: 'Barcelone',
   Augsburg: 'Augsbourg',
   Aschaffenburg: 'Aschaffenbourg',
+  Strasbourg: 'Strasbourg',
+  Bordeaux: 'Bordeaux',
+  Ferrara: 'Ferrare',
+  Lausanne: 'Lausanne',
+  'Le Havre': 'Le Havre',
+  Berlin: 'Berlin',
+  Tokyo: 'Tokyo',
+  Stockholm: 'Stockholm',
+  Dresden: 'Dresde',
+  'New York': 'New York',
+  Smilavičy: 'Smilavitchy',
+  Hradyzk: 'Hradyzk',
+  Rodez: 'Rodez',
+  'Golfe-Juan': 'Golfe-Juan',
 }
 
 export const FR_ARTISTS: Record<string, FrArtist> = {
@@ -504,6 +541,10 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
     knownFor: 'Le Cri',
     blurb:
       'Il peignit l’amour, la jalousie, la maladie et la mort comme des états de l’âme. Un père de l’expressionnisme.',
+    notes: {
+      krohg:
+        'Jeune peintre à Kristiania, il étudia auprès de Krohg, qui défendit ses premières œuvres.',
+    },
   },
   kandinsky: {
     name: 'Vassily Kandinsky',
@@ -515,6 +556,8 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
         'Découvrant les Meules de Monet à Moscou en 1896, il fut stupéfait de ne pas reconnaître d’abord ce qu’elles représentaient.',
       marc: 'Ensemble, ils fondèrent Der Blaue Reiter (Le Cavalier bleu) à Munich en 1911.',
       klee: 'Collègues au Bauhaus, ils habitaient deux maisons voisines à Dessau.',
+      munter:
+        'Ils vécurent et travaillèrent ensemble à Murnau à partir de 1908. Münter accueillit le cercle du Blaue Reiter dans sa maison.',
     },
   },
   matisse: {
@@ -525,6 +568,7 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
       signac: 'L’été 1904 dans la villa de Signac à Saint-Tropez mena tout droit au fauvisme.',
       cezanne:
         'Il s’endetta pour acheter un petit Cézanne, Trois Baigneuses, qu’il garda 37 ans.',
+      dufy: 'Camarades fauves ; la couleur décorative et légère de Dufy naquit du même choc de 1905.',
     },
   },
   mondrian: {
@@ -584,6 +628,9 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
     blurb: 'Des visages allongés aux yeux en amande. La légende de Montparnasse, mort à 35 ans.',
     notes: {
       rivera: 'Voisins à Montparnasse. Modigliani dessina un portrait de Rivera en 1914.',
+      soutine:
+        'Amis proches à Montparnasse. Modigliani peignit le portrait de Soutine vers 1916.',
+      foujita: 'Compagnons de café à Montparnasse dans les années 1920, parmi l’École de Paris.',
     },
   },
   rivera: {
@@ -699,6 +746,8 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
     notes: {
       basquiat:
         'Ils peignirent environ 160 toiles à quatre mains en 1984–85, échangeant coups de pinceau et sérigraphies.',
+      lichtenstein:
+        'Les deux visages du pop américain. Ils exposaient dans le même circuit new-yorkais du début des années 1960.',
     },
   },
   basquiat: {
@@ -792,6 +841,8 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
       'Un Américain né à Florence, le portraitiste le plus en vogue de son temps et un brillant aquarelliste.',
     notes: {
       monet: 'Il rendit visite à Monet à Giverny et le peignit à son chevalet, en plein air.',
+      boldini:
+        'Portraitistes mondains rivaux à Paris et à Londres ; ils courtisaient les mêmes modèles étincelants.',
     },
   },
   valadon: {
@@ -812,6 +863,8 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
       'Il peignit de mémoire la vie domestique dans une couleur saturée et chatoyante : tables du petit-déjeuner, jardins, sa femme Marthe au bain.',
     notes: {
       matisse: 'Matisse et Bonnard ont correspondu et se sont rendu visite pendant 40 ans.',
+      vallotton:
+        'Camarades nabis ; les intérieurs aux contours durs de Vallotton côtoyaient ceux, plus doux, de Bonnard.',
     },
   },
   malevich: {
@@ -831,4 +884,169 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
       modigliani: 'Célèbres compagnons de beuverie à Montmartre, et parfois de bagarre.',
     },
   },
+  greuze: {
+    knownFor: 'L’Accordée de village',
+    blurb:
+      'Peintre de scènes morales larmoyantes qui firent pleurer Paris. Son sentimentalisme passa de mode, puis revint comme une clé de l’âge du sentiment.',
+  },
+  vigee: {
+    name: 'Élisabeth Vigée Le Brun',
+    short: 'Vigée Le Brun',
+    knownFor: 'Marie-Antoinette en gaulle',
+    blurb:
+      'Portraitiste favorite de Marie-Antoinette, et l’une des rares femmes admises à l’Académie royale. L’exil après la Révolution porta son pinceau à travers l’Europe.',
+    notes: {
+      greuze: 'Elle admirait les têtes expressives de Greuze et apprit de son naturalisme sentimental.',
+    },
+  },
+  'theodore-rousseau': {
+    knownFor: 'La Forêt de Fontainebleau',
+    blurb:
+      'Chef de file des paysagistes de Barbizon. Il peignit la forêt de Fontainebleau comme un monde vivant, luttant des années pour accrocher au Salon.',
+    notes: {
+      millet: 'Voisins et alliés à Barbizon ; Rousseau aida Millet dans les années difficiles.',
+      corot: 'Camarades paysagistes de l’école de Fontainebleau, même si la touche de Corot resta plus légère.',
+    },
+  },
+  bonheur: {
+    knownFor: 'Le Marché aux chevaux',
+    blurb:
+      'La femme peintre la plus célèbre du XIXe siècle. Elle peignit les animaux avec l’œil d’une naturaliste et obtint une permission de police pour porter le pantalon aux abattoirs.',
+  },
+  dore: {
+    knownFor: 'Illustrations de l’Enfer de Dante',
+    blurb:
+      'Prodige de l’illustration qui peupla les livres d’Europe de visions sombres et foisonnantes. Ses planches de Dante, de la Bible et de Cervantès fixèrent ces récits pour des millions de lecteurs.',
+  },
+  redon: {
+    knownFor: 'Le Cyclope',
+    blurb:
+      'Des « noirs » au pastel lumineux, il peignit rêves, yeux et têtes flottantes. Les surréalistes le revendiquèrent ensuite comme un ancêtre.',
+    notes: {
+      gauguin:
+        'Ils se rencontrèrent en Bretagne ; le rêve symboliste de Redon offrit à Gauguin une autre voie hors de l’impressionnisme.',
+    },
+  },
+  boldini: {
+    knownFor: 'Portrait de Madame de Florian',
+    blurb:
+      'Le « maître du swish » : le Paris de la Belle Époque en touches tourbillonnantes et élégance allongée.',
+  },
+  backer: {
+    knownFor: 'Intérieur bleu',
+    blurb:
+      'Grande peintre norvégienne des intérieurs et de la lumière des églises. Formée à Munich et à Paris, elle ramena un naturalisme exact et silencieux.',
+  },
+  krohg: {
+    knownFor: 'Albertine au poste de police',
+    blurb:
+      'Peintre et écrivain des pauvres et des exclus de Kristiania. Champion du naturalisme, et premier défenseur du jeune Edvard Munch.',
+  },
+  vallotton: {
+    name: 'Félix Vallotton',
+    short: 'Vallotton',
+    knownFor: 'Le Mensonge',
+    blurb:
+      'Un Nabi suisse aux contours durs et aux intérieurs froids. Ses bois gravés de la vie parisienne sont aussi tranchants que ses scènes domestiques tendues.',
+  },
+  dufy: {
+    knownFor: 'La Fée Électricité',
+    blurb:
+      'Un fauve qui fit de la vie moderne une joie légère et calligraphique : régates, orchestres et le grand pavillon de l’Électricité de 1937.',
+  },
+  munter: {
+    name: 'Gabriele Münter',
+    short: 'Münter',
+    knownFor: 'Portrait de Marianne von Werefkin',
+    blurb:
+      'Voix fondatrice du Blaue Reiter. Ses paysages de Murnau et ses portraits ont une couleur hardie et simplifiée qui lui appartient.',
+    notes: {
+      kandinsky:
+        'Compagne et collaboratrice de 1902 à 1916. Sa maison de Murnau devint un lieu de rencontre du Blaue Reiter.',
+    },
+  },
+  'robert-delaunay': {
+    knownFor: 'Fenêtres simultanées',
+    blurb:
+      'Il brisa la tour Eiffel et mit le soleil en disques de couleur pure. Apollinaire nomma le style orphisme.',
+    notes: {
+      'sonia-delaunay':
+        'Mariés en 1910, ils bâtirent l’orphisme ensemble, en peinture, en mode et en design.',
+    },
+  },
+  'sonia-delaunay': {
+    knownFor: 'Prismes électriques',
+    blurb:
+      'Peintre, designer et pionnière de la couleur dans la vie quotidienne. Elle porta l’orphisme de la toile au tissu, au livre et à la scène.',
+    notes: {
+      'robert-delaunay':
+        'Leurs couleurs « simultanées » furent une collaboration de toute une vie, entre peinture et arts appliqués.',
+    },
+  },
+  foujita: {
+    knownFor: 'Nu couché à la toile de Jouy',
+    blurb:
+      'Star japonaise de Montparnasse, célèbre pour ses fonds laiteux, son fin contour noir et ses chats. Il relia l’encre de Tokyo à l’huile de Paris.',
+  },
+  soutine: {
+    name: 'Chaïm Soutine',
+    short: 'Soutine',
+    knownFor: 'Le Bœuf écorché',
+    blurb:
+      'Paysages tordus et chairs tremblantes. Un peintre litvak à Paris dont l’expression brute hanta plus tard Lucian Freud.',
+    notes: {
+      rembrandt: 'Ses carcasses répondent au Bœuf écorché de Rembrandt, qu’il étudia au Louvre.',
+      modigliani:
+        'Amis à Montparnasse ; Modigliani peignit son portrait et l’aida à trouver des marchands.',
+    },
+  },
+  bergman: {
+    knownFor: 'Horizons d’or et d’argent',
+    blurb:
+      'Peintre abstraite norvégéo-suédoise des horizons, des montagnes et de la lumière métallique. Longtemps éclipsée, aujourd’hui centrale dans le modernisme nordique.',
+  },
+  soulages: {
+    knownFor: 'Outrenoir',
+    blurb:
+      '« Le peintre du noir. » Il traita le noir comme une couleur qui réfléchit la lumière — l’Outrenoir — et devint l’un des maîtres modernes les plus célèbres de France.',
+  },
+  freud: {
+    knownFor: 'Benefits Supervisor Sleeping',
+    blurb:
+      'Petit-fils de Sigmund Freud, et le grand peintre britannique de la chair sans idéal. Ses modèles enduraient des dizaines de séances sous une froide lumière du nord.',
+    notes: {
+      soutine:
+        'Freud prisait la touche crue de Soutine sur la viande ; la dette se lit dans sa propre peinture de la chair.',
+    },
+  },
+  lichtenstein: {
+    knownFor: 'Whaam!',
+    blurb:
+      'Points Benday, baisers de bande dessinée et explosions. Il fit de l’imprimerie de masse un grand art, froid là où Warhol était impassible.',
+  },
+  richter: {
+    knownFor: 'Abstrakte Bilder',
+    blurb:
+      'Toujours à l’œuvre : peintures d’après photo, nuanciers et vastes abstractions à la raclette. Il demande encore ce que la peinture peut faire.',
+  },
+  raysse: {
+    knownFor: 'Made in Japan – La Grande Odalisque',
+    blurb:
+      'Nouveau réaliste qui néonisa la beauté classique et la couleur de consommation, avant de revenir à une figuration plus libre et mythique.',
+  },
+  fromanger: {
+    name: 'Gérard Fromanger',
+    short: 'Fromanger',
+    knownFor: 'Série du Boulevard des Italiens',
+    blurb:
+      'Figure majeure de la figuration narrative. Il inonda de couleur plate et politique les photographies de la rue.',
+  },
+  garouste: {
+    name: 'Gérard Garouste',
+    short: 'Garouste',
+    knownFor: 'Tableaux mythologiques et bibliques',
+    blurb:
+      'Figure majeure de la figuration française depuis les années 1980. Il peignit mythes, Écritures et ânes d’une main classique et inquiète.',
+  },
+
 }

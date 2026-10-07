@@ -59,9 +59,7 @@ function ArtistCardImpl({ artist, index, total }: ArtistCardProps) {
         <p className="label__movement">{tx.movement(artist.movement)}</p>
         <h3 className="label__name">{name}</h3>
         <p className="label__facts">
-          <span>
-            {artist.born}–{artist.died}
-          </span>
+          <span>{tx.lifespan(artist)}</span>
           <span className="label__dot">·</span>
           <span>
             {tx.place(artist.birthplace)}, {tx.country(artist.country)}

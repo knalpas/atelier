@@ -5,6 +5,7 @@ export type RoomId =
   | 'modernlife'
   | 'avantgarde'
   | 'american'
+  | 'present'
 
 export interface Artist {
   id: string

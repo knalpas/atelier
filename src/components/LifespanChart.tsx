@@ -119,7 +119,7 @@ export function LifespanChart() {
                   onMouseEnter={() => setFocus(p.id)}
                   onFocus={() => setFocus(p.id)}
                   onClick={() => setFocus(p.id)}
-                  aria-label={`${tx.name(a)}, ${a.born}–${a.died}`}
+                  aria-label={`${tx.name(a)}, ${tx.lifespan(a)}`}
                 >
                   <span className={`bar__label${p.labelInside ? '' : ' bar__label--out'}`}>
                     {tx.short(a)}
@@ -146,7 +146,7 @@ export function LifespanChart() {
                 <strong>{tx.name(focused)}</strong>
                 <span>
                   {' '}
-                  · {focused.born}–{focused.died} · {tx.movement(focused.movement)} ·{' '}
+                  · {tx.lifespan(focused)} · {tx.movement(focused.movement)} ·{' '}
                   {tx.place(focused.birthplace)}, {tx.country(focused.country)}
                 </span>
                 <p className="chart__rels">

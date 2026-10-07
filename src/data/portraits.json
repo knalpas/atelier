@@ -562,5 +562,137 @@
     "file": "https://commons.wikimedia.org/wiki/File:Maurice_Utrillo,_ca._1915-1920.jpg",
     "title": "Maurice_Utrillo,_ca._1915-1920.jpg",
     "license": "Public domain"
+  },
+  "greuze": {
+    "src": "portraits/greuze.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Jean-Baptiste_Greuze_-_Self-Portrait.jpg",
+    "title": "Jean-Baptiste_Greuze_-_Self-Portrait.jpg",
+    "license": "Public domain"
+  },
+  "vigee": {
+    "src": "portraits/vigee.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Self-portrait_in_a_Straw_Hat_by_Elisabeth-Louise_Vig%C3%A9e-Lebrun.jpg",
+    "title": "Self-portrait_in_a_Straw_Hat_by_Elisabeth-Louise_Vigée-Lebrun.jpg",
+    "license": "Public domain"
+  },
+  "theodore-rousseau": {
+    "src": "portraits/theodore-rousseau.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Theodore_Rousseau.jpg",
+    "title": "Theodore_Rousseau.jpg",
+    "license": "Public domain"
+  },
+  "bonheur": {
+    "src": "portraits/bonheur.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Rosa_Bonheur_agee.jpg",
+    "title": "Rosa_Bonheur_agee.jpg",
+    "license": "Public domain"
+  },
+  "dore": {
+    "src": "portraits/dore.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Photograph_of_Gustave_Dor%C3%A9_by_Nadar,_between_1856_and_1858.jpg",
+    "title": "Photograph_of_Gustave_Doré_by_Nadar,_between_1856_and_1858.jpg",
+    "license": "Public domain"
+  },
+  "redon": {
+    "src": "portraits/redon.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Odilon_Redon_vers_1880.jpg",
+    "title": "Odilon_Redon_vers_1880.jpg",
+    "license": "Public domain"
+  },
+  "boldini": {
+    "src": "portraits/boldini.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Giovanni_Boldini01.jpg",
+    "title": "Giovanni_Boldini01.jpg",
+    "license": "Public domain"
+  },
+  "backer": {
+    "src": "portraits/backer.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Portrett_av_Harriet_Backer_(1845-1932)_(9390378423).jpg",
+    "title": "Portrett_av_Harriet_Backer_(1845-1932)_(9390378423).jpg",
+    "license": "No restrictions"
+  },
+  "krohg": {
+    "src": "portraits/krohg.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Portrett_av_Christian_Krohg,_ca_1903.jpg",
+    "title": "Portrett_av_Christian_Krohg,_ca_1903.jpg",
+    "license": "CC BY 2.0"
+  },
+  "vallotton": {
+    "src": "portraits/vallotton.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Vallotton-Autoportrait.jpg",
+    "title": "Vallotton-Autoportrait.jpg",
+    "license": "Public domain"
+  },
+  "dufy": {
+    "src": "portraits/dufy.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Raoul_Dufy,_portrait_photograph.jpg",
+    "title": "Raoul_Dufy,_portrait_photograph.jpg",
+    "license": "Public domain"
+  },
+  "munter": {
+    "src": "portraits/munter.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Csm_G-64-891-1_Muenter-G-ONLINE_794173df26.jpg",
+    "title": "Csm_G-64-891-1_Muenter-G-ONLINE_794173df26.jpg",
+    "license": "Public domain"
+  },
+  "robert-delaunay": {
+    "src": "portraits/robert-delaunay.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Robert_Delaunay_portrait_photograph.jpg",
+    "title": "Robert_Delaunay_portrait_photograph.jpg",
+    "license": "Public domain"
+  },
+  "sonia-delaunay": {
+    "src": "portraits/sonia-delaunay.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Sonia_Delaunay_portrait_photograph.jpg",
+    "title": "Sonia_Delaunay_portrait_photograph.jpg",
+    "license": "Public domain"
+  },
+  "foujita": {
+    "src": "portraits/foujita.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:1930_Tsuguharu_Fujita.jpg",
+    "title": "1930_Tsuguharu_Fujita.jpg",
+    "license": "CC BY 4.0"
+  },
+  "soutine": {
+    "src": "portraits/soutine.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:ChaimSoutine_1935.jpg",
+    "title": "ChaimSoutine 1935.jpg",
+    "license": "CC BY-SA 4.0"
+  },
+  "soulages": {
+    "src": "portraits/soulages.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:655446-artiste-pierre-soulages.jpg",
+    "title": "655446-artiste-pierre-soulages.jpg",
+    "license": "CC BY-SA 3.0"
+  },
+  "freud": {
+    "src": "portraits/freud.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:LucienFreud.jpg",
+    "title": "LucienFreud.jpg",
+    "license": "CC BY 2.0"
+  },
+  "lichtenstein": {
+    "src": "portraits/lichtenstein.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Roy_Lichtenstein,_painter_1969_(cropped).jpg",
+    "title": "Roy_Lichtenstein,_painter_1969_(cropped).jpg",
+    "license": "Public domain"
+  },
+  "richter": {
+    "src": "portraits/richter.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Gerhard_Richter,_Prague_(2017).jpg",
+    "title": "Gerhard_Richter,_Prague_(2017).jpg",
+    "license": "CC BY-SA 4.0"
+  },
+  "fromanger": {
+    "src": "portraits/fromanger.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:Fromanger.png",
+    "title": "Fromanger.png",
+    "license": "CC BY-SA 3.0"
+  },
+  "garouste": {
+    "src": "portraits/garouste.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:G%C3%A9rard_Garouste_2018.jpg",
+    "title": "Gérard_Garouste_2018.jpg",
+    "license": "CC BY-SA 4.0"
   }
 }

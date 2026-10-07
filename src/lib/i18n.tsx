@@ -173,6 +173,7 @@ export interface Text {
   rel: (kind: RelKind, a: Artist) => string
   story: (owner: string, about: string, fallback: string) => string
   wiki: (a: Artist) => string
+  lifespan: (a: Artist) => string
   searchable: (a: Artist) => string
 }
 
@@ -183,6 +184,7 @@ const ROOM_SHORT_EN: Record<string, string> = {
   modernlife: 'Impressionism',
   avantgarde: 'Avant-Garde',
   american: 'America',
+  present: 'After 1945',
 }
 
 const en: Text = {
@@ -199,6 +201,8 @@ const en: Text = {
   rel: (kind) => REL_EN[kind],
   story: (_owner, _about, fallback) => fallback,
   wiki: (a) => `https://en.wikipedia.org/wiki/${encodeURIComponent(a.wiki.replace(/ /g, '_'))}`,
+  lifespan: (a) =>
+    a.died >= new Date().getFullYear() ? `${a.born}–present` : `${a.born}–${a.died}`,
   searchable: (a) => [a.name, a.short, a.movement, a.country, a.birthplace, a.knownFor].join(' '),
 }
 
@@ -221,6 +225,8 @@ const fr: Text = {
     WIKI_FR[a.id]
       ? `https://fr.wikipedia.org/wiki/${encodeURIComponent(WIKI_FR[a.id].replace(/ /g, '_'))}`
       : en.wiki(a),
+  lifespan: (a) =>
+    a.died >= new Date().getFullYear() ? `${a.born} – aujourd’hui` : `${a.born}–${a.died}`,
   searchable: (a) =>
     [
       en.searchable(a),

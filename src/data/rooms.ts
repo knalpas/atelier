@@ -43,7 +43,7 @@ export const rooms: Room[] = [
     span: 'c. 1720 – 1860',
     intro:
       'Academies, revolutions and storms. Neoclassical line against Romantic colour, and the first Realists turn to ordinary life.',
-    movements: ['Rococo', 'Neoclassicism', 'Romanticism', 'Barbizon School', 'Ukiyo-e', 'Realism'],
+    movements: ['Rococo', 'Neoclassicism', 'Romanticism', 'Barbizon School', 'Ukiyo-e', 'Realism', 'Naturalism'],
     wall: '#1c2940',
     ink: '#ece4d4',
     muted: 'rgba(236, 228, 212, 0.68)',
@@ -76,6 +76,7 @@ export const rooms: Room[] = [
       'Expressionism',
       'Fauvism',
       'Cubism',
+      'Orphism',
       'Suprematism',
       'Naïve Art',
       'Der Blaue Reiter',
@@ -111,6 +112,28 @@ export const rooms: Room[] = [
     muted: 'rgba(238, 236, 230, 0.66)',
     accent: '#e2b14c',
     chart: '#303036',
+  },
+  {
+    id: 'present',
+    numeral: 'VII',
+    title: 'After 1945',
+    span: 'c. 1945 – today',
+    intro:
+      'Europe answers New York in its own voices: black as light, flesh as fact, and a return of the figure under many names.',
+    movements: [
+      'Art Informel',
+      'School of London',
+      'Nouveau Réalisme',
+      'Figuration Narrative',
+      'Figuration Libre',
+      'Nordic Abstraction',
+      'Contemporary Painting',
+    ],
+    wall: '#2a2420',
+    ink: '#f0ebe3',
+    muted: 'rgba(240, 235, 227, 0.66)',
+    accent: '#c4a574',
+    chart: '#5c534a',
   },
 ]
 

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { artists, pairCount } from '../data/graph'
+import { rooms } from '../data/rooms'
 import { Portrait } from './Portrait'
 import { LangToggle } from './LangToggle'
 import { useI18n } from '../lib/i18n'
@@ -42,9 +43,9 @@ const SALON = [
   'modigliani',
   'valadon',
   'courbet',
-  'friedrich',
+  'vigee',
   'holbein',
-  'seurat',
+  'soulages',
 ]
 
 export function Hero() {
@@ -83,7 +84,7 @@ export function Hero() {
             <strong>{artists.length}</strong> {tx.t('stat_artists')}
           </span>
           <span>
-            <strong>6</strong> {tx.t('stat_rooms')}
+            <strong>{rooms.length}</strong> {tx.t('stat_rooms')}
           </span>
           <span>
             <strong>{pairCount}</strong> {tx.t('stat_links')}

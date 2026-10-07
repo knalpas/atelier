@@ -39,7 +39,7 @@ export function PersonLink({ id, from }: PersonLinkProps) {
           <span className="peek__text">
             <strong>{tx.name(artist)}</strong>
             <span>
-              {artist.born}–{artist.died} · {tx.movement(artist.movement)}
+              {tx.lifespan(artist)} · {tx.movement(artist.movement)}
             </span>
             <span>
               {tx.place(artist.birthplace)}, {tx.country(artist.country)}

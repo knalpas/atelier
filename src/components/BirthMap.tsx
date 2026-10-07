@@ -273,7 +273,7 @@ export function BirthMap() {
                   <span>
                     <strong>{tx.name(a)}</strong>
                     <span>
-                      {a.born}–{a.died} · {tx.movement(a.movement)}
+                      {tx.lifespan(a)} · {tx.movement(a.movement)}
                       {mixed ? ` · ${tx.place(a.birthplace)}` : ''}
                     </span>
                   </span>
