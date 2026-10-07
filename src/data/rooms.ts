@@ -116,7 +116,7 @@ export const rooms: Room[] = [
   {
     id: 'present',
     numeral: 'VII',
-    title: 'After 1945',
+    title: 'Our Time',
     span: 'c. 1945 – today',
     intro:
       'Europe answers New York in its own voices: black as light, flesh as fact, and a return of the figure under many names.',

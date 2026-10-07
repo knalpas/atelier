@@ -68,8 +68,8 @@ export const FR_ROOMS: Record<RoomId, { title: string; short: string; span: stri
       'Après la guerre, le centre de gravité se déplace à New York. L’abstraction, puis le pop, puis la rue.',
   },
   present: {
-    title: 'Après 1945',
-    short: 'Après 1945',
+    title: 'Notre temps',
+    short: 'Notre temps',
     span: 'v. 1945 – aujourd’hui',
     intro:
       'L’Europe répond à New York avec ses propres voix : le noir comme lumière, la chair comme fait, et le retour de la figure sous bien des noms.',

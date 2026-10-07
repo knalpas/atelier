@@ -20,7 +20,7 @@
   "bellini": {
     "src": "portraits/bellini.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Giovanni_Bellini_Felt%C3%A9telezett%C3%96narck%C3%A9peKJ.jpg",
-    "title": "Giovanni_Bellini_FeltételezettÖnarcképeKJ.jpg",
+    "title": "Giovanni_Bellini_Felt\u00e9telezett\u00d6narck\u00e9peKJ.jpg",
     "license": "Public domain"
   },
   "verrocchio": {
@@ -50,7 +50,7 @@
   "durer": {
     "src": "portraits/durer.webp",
     "file": "https://commons.wikimedia.org/wiki/File:D%C3%BCrer_Alte_Pinakothek.jpg",
-    "title": "Dürer_Alte_Pinakothek.jpg",
+    "title": "D\u00fcrer_Alte_Pinakothek.jpg",
     "license": "Public domain"
   },
   "michelangelo": {
@@ -128,7 +128,7 @@
   "velazquez": {
     "src": "portraits/velazquez.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_Autorretrato_45_x_38_cm_-_Colecci%C3%B3n_Real_Academia_de_Bellas_Artes_de_San_Carlos_-_Museo_de_Bellas_Artes_de_Valencia.jpg",
-    "title": "Diego_Velázquez_Autorretrato_45_x_38_cm_-_Colección_Real_Academia_de_Bellas_Artes_de_San_Carlos_-_Museo_de_Bellas_Artes_de_Valencia.jpg",
+    "title": "Diego_Vel\u00e1zquez_Autorretrato_45_x_38_cm_-_Colecci\u00f3n_Real_Academia_de_Bellas_Artes_de_San_Carlos_-_Museo_de_Bellas_Artes_de_Valencia.jpg",
     "license": "Public domain"
   },
   "rembrandt": {
@@ -158,7 +158,7 @@
   "goya": {
     "src": "portraits/goya.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Vicente_L%C3%B3pez_Porta%C3%B1a_-_el_pintor_Francisco_de_Goya.jpg",
-    "title": "Vicente_López_Portaña_-_el_pintor_Francisco_de_Goya.jpg",
+    "title": "Vicente_L\u00f3pez_Porta\u00f1a_-_el_pintor_Francisco_de_Goya.jpg",
     "license": "Public domain"
   },
   "david": {
@@ -176,7 +176,7 @@
   "friedrich": {
     "src": "portraits/friedrich.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Gerhard_von_K%C3%BCgelgen_portrait_of_Friedrich.jpg",
-    "title": "Gerhard_von_Kügelgen_portrait_of_Friedrich.jpg",
+    "title": "Gerhard_von_K\u00fcgelgen_portrait_of_Friedrich.jpg",
     "license": "Public domain"
   },
   "turner": {
@@ -200,7 +200,7 @@
   "delacroix": {
     "src": "portraits/delacroix.webp",
     "file": "https://commons.wikimedia.org/wiki/File:F%C3%A9lix_Nadar_1820-1910_portraits_Eug%C3%A8ne_Delacroix_restored.jpg",
-    "title": "Félix_Nadar_1820-1910_portraits_Eugène_Delacroix_restored.jpg",
+    "title": "F\u00e9lix_Nadar_1820-1910_portraits_Eug\u00e8ne_Delacroix_restored.jpg",
     "license": "Public domain"
   },
   "courbet": {
@@ -218,7 +218,7 @@
   "manet": {
     "src": "portraits/manet.webp",
     "file": "https://commons.wikimedia.org/wiki/File:%C3%89douard_Manet,_en_buste,_de_face_-_Nadar.jpg",
-    "title": "Édouard_Manet,_en_buste,_de_face_-_Nadar.jpg",
+    "title": "\u00c9douard_Manet,_en_buste,_de_face_-_Nadar.jpg",
     "license": "Public domain"
   },
   "degas": {
@@ -338,7 +338,7 @@
   "kirchner": {
     "src": "portraits/kirchner.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Ernst_Ludwig_Kirchner_-_Selbstportr%C3%A4t_in_der_Atelierwohnung_in_Berlin-Friedenau_(1913-15).jpg",
-    "title": "Ernst_Ludwig_Kirchner_-_Selbstporträt_in_der_Atelierwohnung_in_Berlin-Friedenau_(1913-15).jpg",
+    "title": "Ernst_Ludwig_Kirchner_-_Selbstportr\u00e4t_in_der_Atelierwohnung_in_Berlin-Friedenau_(1913-15).jpg",
     "license": "Public domain"
   },
   "picasso": {
@@ -404,7 +404,7 @@
   "magritte": {
     "src": "portraits/magritte.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Portrait_en_buste_du_peintre_surr%C3%A9aliste_Ren%C3%A9_Magritte_(1898-1967)_le_18_octobre_1961_devant_une_de_ses_toiles,_PH19994.jpg",
-    "title": "Portrait_en_buste_du_peintre_surréaliste_René_Magritte_(1898-1967)_le_18_octobre_1961_devant_une_de_ses_toiles,_PH19994.jpg",
+    "title": "Portrait_en_buste_du_peintre_surr\u00e9aliste_Ren\u00e9_Magritte_(1898-1967)_le_18_octobre_1961_devant_une_de_ses_toiles,_PH19994.jpg",
     "license": "CC0"
   },
   "calder": {
@@ -422,7 +422,7 @@
   "dali": {
     "src": "portraits/dali.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Salvador_Dal%C3%AD_1939.jpg",
-    "title": "Salvador_Dalí_1939.jpg",
+    "title": "Salvador_Dal\u00ed_1939.jpg",
     "license": "Public domain"
   },
   "de-kooning": {
@@ -464,7 +464,7 @@
   "piero": {
     "src": "portraits/piero.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Delle_vite_de%27_pi%C3%B9_eccellenti_pittori,_scultori,_et_architetti_(1648)_(14799608033).jpg",
-    "title": "Delle_vite_de'_più_eccellenti_pittori,_scultori,_et_architetti_(1648)_(14799608033).jpg",
+    "title": "Delle_vite_de'_pi\u00f9_eccellenti_pittori,_scultori,_et_architetti_(1648)_(14799608033).jpg",
     "license": "Public domain"
   },
   "holbein": {
@@ -494,25 +494,25 @@
   "fragonard": {
     "src": "portraits/fragonard.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Jean-Honor%C3%A9_Fragonard_-_Self-portrait_with_smiling_face.jpg",
-    "title": "Jean-Honoré_Fragonard_-_Self-portrait_with_smiling_face.jpg",
+    "title": "Jean-Honor\u00e9_Fragonard_-_Self-portrait_with_smiling_face.jpg",
     "license": "Public domain"
   },
   "corot": {
     "src": "portraits/corot.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Camille_Corot_by_%C3%89tienne_Carjat.jpg",
-    "title": "Camille_Corot_by_Étienne_Carjat.jpg",
+    "title": "Camille_Corot_by_\u00c9tienne_Carjat.jpg",
     "license": "Public domain"
   },
   "millet": {
     "src": "portraits/millet.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_by_Nadar,_Metropolitan_Museum_copy.jpg",
-    "title": "Jean-François_Millet_by_Nadar,_Metropolitan_Museum_copy.jpg",
+    "title": "Jean-Fran\u00e7ois_Millet_by_Nadar,_Metropolitan_Museum_copy.jpg",
     "license": "Public domain"
   },
   "whistler": {
     "src": "portraits/whistler.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Whistler_Selbstportr%C3%A4t.jpg",
-    "title": "Whistler_Selbstporträt.jpg",
+    "title": "Whistler_Selbstportr\u00e4t.jpg",
     "license": "Public domain"
   },
   "sisley": {
@@ -548,7 +548,7 @@
   "bonnard": {
     "src": "portraits/bonnard.webp",
     "file": "https://commons.wikimedia.org/wiki/File:T%C3%AAte_de_Bonnard_(Portrait_photograph_of_Pierre_Bonnard),_c.1899,_Mus%C3%A9e_d%27Orsay,_restaur%C3%A9e.jpg",
-    "title": "Tête_de_Bonnard_(Portrait_photograph_of_Pierre_Bonnard),_c.1899,_Musée_d'Orsay,_restaurée.jpg",
+    "title": "T\u00eate_de_Bonnard_(Portrait_photograph_of_Pierre_Bonnard),_c.1899,_Mus\u00e9e_d'Orsay,_restaur\u00e9e.jpg",
     "license": "CC BY-SA 4.0"
   },
   "malevich": {
@@ -572,7 +572,7 @@
   "vigee": {
     "src": "portraits/vigee.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Self-portrait_in_a_Straw_Hat_by_Elisabeth-Louise_Vig%C3%A9e-Lebrun.jpg",
-    "title": "Self-portrait_in_a_Straw_Hat_by_Elisabeth-Louise_Vigée-Lebrun.jpg",
+    "title": "Self-portrait_in_a_Straw_Hat_by_Elisabeth-Louise_Vig\u00e9e-Lebrun.jpg",
     "license": "Public domain"
   },
   "theodore-rousseau": {
@@ -590,7 +590,7 @@
   "dore": {
     "src": "portraits/dore.webp",
     "file": "https://commons.wikimedia.org/wiki/File:Photograph_of_Gustave_Dor%C3%A9_by_Nadar,_between_1856_and_1858.jpg",
-    "title": "Photograph_of_Gustave_Doré_by_Nadar,_between_1856_and_1858.jpg",
+    "title": "Photograph_of_Gustave_Dor\u00e9_by_Nadar,_between_1856_and_1858.jpg",
     "license": "Public domain"
   },
   "redon": {
@@ -631,8 +631,8 @@
   },
   "munter": {
     "src": "portraits/munter.webp",
-    "file": "https://commons.wikimedia.org/wiki/File:Csm_G-64-891-1_Muenter-G-ONLINE_794173df26.jpg",
-    "title": "Csm_G-64-891-1_Muenter-G-ONLINE_794173df26.jpg",
+    "file": "https://commons.wikimedia.org/wiki/File:Gabriele_M%C3%BCnter.jpg",
+    "title": "Gabriele M\u00fcnter.jpg",
     "license": "Public domain"
   },
   "robert-delaunay": {
@@ -692,7 +692,19 @@
   "garouste": {
     "src": "portraits/garouste.webp",
     "file": "https://commons.wikimedia.org/wiki/File:G%C3%A9rard_Garouste_2018.jpg",
-    "title": "Gérard_Garouste_2018.jpg",
+    "title": "G\u00e9rard_Garouste_2018.jpg",
     "license": "CC BY-SA 4.0"
+  },
+  "bergman": {
+    "src": "portraits/bergman.webp",
+    "file": "https://commons.wikimedia.org/wiki/File:A._E._Bergman,_n%C2%B02-1964_st%C3%A8le.jpg",
+    "title": "A. E. Bergman, n\u00b02-1964 st\u00e8le.jpg",
+    "license": "CC BY-SA 4.0"
+  },
+  "raysse": {
+    "src": "portraits/raysse.webp",
+    "file": "https://www.flickr.com/photos/72746018@N00/20122216883",
+    "title": "Dylaby artists, Stedelijk Museum, 1962 (crop: Martial Raysse)",
+    "license": "CC BY 2.0"
   }
 }
