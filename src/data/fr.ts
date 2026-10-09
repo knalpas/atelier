@@ -22,6 +22,11 @@ export const FR_FEMALE = new Set([
   'munter',
   'sonia-delaunay',
   'bergman',
+  'carrington',
+  'frankenthaler',
+  'mitchell',
+  'riley',
+  'niki',
 ])
 
 export const FR_ROOMS: Record<RoomId, { title: string; short: string; span: string; intro: string }> = {
@@ -42,9 +47,9 @@ export const FR_ROOMS: Record<RoomId, { title: string; short: string; span: stri
   revolution: {
     title: 'Révolution et romantisme',
     short: 'Romantisme',
-    span: 'v. 1720 – 1860',
+    span: 'v. 1720 – 1890',
     intro:
-      'Académies, révolutions et tempêtes. La ligne néoclassique contre la couleur romantique, et les premiers réalistes se tournent vers la vie ordinaire.',
+      'Académies, révolutions et tempêtes. La ligne néoclassique contre la couleur romantique, les premiers réalistes se tournent vers la vie ordinaire, et les préraphaélites regardent le monde d’avant Raphaël.',
   },
   modernlife: {
     title: 'La lumière et la vie moderne',
@@ -65,21 +70,21 @@ export const FR_ROOMS: Record<RoomId, { title: string; short: string; span: stri
     short: 'Amérique',
     span: 'v. 1920 – 1990',
     intro:
-      'Après la guerre, le centre de gravité se déplace à New York. L’abstraction, puis le pop, puis la rue.',
+      'Après la guerre, le centre de gravité se déplace à New York : le geste, la couleur imbibée, puis les drapeaux, les combines et les boîtes de soupe.',
   },
   latemodern: {
     title: 'Modernisme tardif',
     short: 'Modernisme',
     span: 'v. 1945 – 1975',
     intro:
-      'Après la guerre, le modernisme européen se divise en courants nommés : l’abstraction gestuelle à Paris, l’abstraction lyrique à ses côtés, et à Londres un retour sans pitié au corps.',
+      'L’Europe répond à New York par ses propres courants : le geste et la feuille de métal, la toile incisée, le rythme optique, le pop britannique, et un retour cru au corps.',
   },
   contemporary: {
     title: 'Contemporain',
     short: 'Contemporain',
     span: 'v. 1960 – aujourd’hui',
     intro:
-      'Des mouvements nommés s’emparent de la société de consommation, de la photographie et du récit, puis la peinture postmoderne ramène le mythe dans l’atelier.',
+      'Des groupes nommés s’emparent des débris de la consommation, de la photographie et de la figure : du Nouveau Réalisme et de l’école de Leipzig à la rue, au Superflat et aux Young British Artists.',
   },
 }
 
@@ -132,6 +137,22 @@ export const FR_MOVEMENTS: Record<string, string> = {
   'Lyrical Abstraction': 'Abstraction lyrique',
   'Capitalist Realism': 'Réalisme capitaliste',
   Postmodernism: 'Postmodernisme',
+  'Pre-Raphaelitism': 'Préraphaélisme',
+  Futurism: 'Futurisme',
+  'Metaphysical Art': 'Peinture métaphysique',
+  Regionalism: 'Régionalisme',
+  'Neo-Dada': 'Néo-dada',
+  'Color Field': 'Color field',
+  'Art Brut': 'Art brut',
+  'Op Art': 'Op art',
+  Spatialism: 'Spatialisme',
+  'British Pop': 'Pop britannique',
+  'Street Art': 'Art urbain',
+  Transavanguardia: 'Transavanguardia',
+  'Figuration Libre': 'Figuration libre',
+  'New Leipzig School': 'Nouvelle école de Leipzig',
+  Superflat: 'Superflat',
+  'Young British Artists': 'Young British Artists',
 }
 
 export const FR_COUNTRIES: Record<string, string> = {
@@ -156,6 +177,10 @@ export const FR_COUNTRIES: Record<string, string> = {
   Latvia: 'Lettonie',
   Ukraine: 'Ukraine',
   Sweden: 'Suède',
+  Ireland: 'Irlande',
+  Argentina: 'Argentine',
+  Hungary: 'Hongrie',
+  China: 'Chine',
 }
 
 export const FR_PLACES: Record<string, string> = {
@@ -187,6 +212,11 @@ export const FR_PLACES: Record<string, string> = {
   Hradyzk: 'Hradyzk',
   Rodez: 'Rodez',
   'Golfe-Juan': 'Golfe-Juan',
+  'Reggio Calabria': 'Reggio de Calabre',
+  'Saint Petersburg': 'Saint-Pétersbourg',
+  Beijing: 'Pékin',
+  Naples: 'Naples',
+  Dublin: 'Dublin',
 }
 
 export const FR_ARTISTS: Record<string, FrArtist> = {
@@ -426,6 +456,8 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
     notes: {
       constable:
         'La découverte de La Charrette de foin de Constable à Paris en 1824 poussa Delacroix à repeindre le ciel de l’une de ses propres toiles.',
+      gericault:
+        'Il posa pour un cadavre du Radeau de la Méduse, et rentra chez lui « comme un fou » après avoir vu le tableau dans l’atelier de Géricault.',
     },
   },
   courbet: {
@@ -689,6 +721,8 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
       'Chapeaux melon, nuages et une pipe qui n’est « pas une pipe ». Il peignit des énigmes dans le style le plus simple possible.',
     notes: {
       dali: 'Magritte passa l’été 1929 avec Dalí à Cadaqués.',
+      'de-chirico':
+        'Vers 1923, une reproduction du Chant d’amour changea son idée de ce que pouvait être un tableau. Il dit que ses yeux voyaient la pensée pour la première fois.',
     },
   },
   calder: {
@@ -1054,6 +1088,252 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
     knownFor: 'Tableaux mythologiques et bibliques',
     blurb:
       'Peintre figuratif postmoderne, en dehors des groupes des années 1980. Il peint mythes, Écritures et ânes d’une main classique et inquiète.',
+  },
+  gericault: {
+    name: 'Théodore Géricault',
+    short: 'Géricault',
+    knownFor: 'Le Radeau de la Méduse',
+    blurb:
+      'Il peignit un naufrage récent au format d’un tableau d’histoire, d’après de vrais cadavres. Mort à 32 ans, il laissa au romantisme son image fondatrice.',
+  },
+  millais: {
+    knownFor: 'Ophélie',
+    blurb:
+      'Enfant prodige, cofondateur de la Confrérie préraphaélite en 1848. Ophélie fut peinte feuille à feuille au bord de la rivière, à Ewell.',
+    notes: {
+      rossetti:
+        'Avec Holman Hunt, ils fondèrent la Confrérie en 1848 et signèrent leurs premières toiles P.R.B.',
+    },
+  },
+  rossetti: {
+    knownFor: 'Beata Beatrix',
+    blurb:
+      'Poète et peintre de la Confrérie. Après la mort de sa femme Elizabeth Siddal, il la peignit en Béatrice, les yeux fermés.',
+  },
+  leger: {
+    name: 'Fernand Léger',
+    short: 'Léger',
+    knownFor: 'La Ville',
+    blurb:
+      'Le cubisme en formes tubulaires, puis la ville moderne et la machine. Il voulait que la figure humaine ait le même poids qu’une bicyclette.',
+    notes: {
+      'robert-delaunay':
+        'Ils se sont connus à La Ruche et dans le groupe de Puteaux. La Ville de Léger cache les initiales R et D, un clin d’œil à Delaunay.',
+    },
+  },
+  boccioni: {
+    knownFor: 'La Ville qui monte',
+    blurb:
+      'Le peintre futuriste de la vitesse, de la foule et de la rue moderne. Il mourut à 33 ans d’une chute de cheval pendant son instruction militaire.',
+    notes: {
+      picasso:
+        'Un voyage à Paris en 1911, et le cubisme de Picasso et de Braque, poussa la peinture futuriste vers la forme brisée.',
+    },
+  },
+  'de-chirico': {
+    name: 'Giorgio de Chirico',
+    short: 'De Chirico',
+    knownFor: 'Le Chant d’amour',
+    blurb:
+      'Italien de famille, né en Grèce. Arcades vides, horloges et un gant de caoutchouc : la peinture métaphysique, point de départ des surréalistes.',
+  },
+  ernst: {
+    knownFor: 'L’Éléphant Célèbes',
+    blurb:
+      'Du dada de Cologne au surréalisme. Il frotta, gratta et colla des images de rêve, dont le monstre mécanique de L’Éléphant Célèbes.',
+    notes: {
+      'de-chirico':
+        'Les places vides de De Chirico aidèrent Ernst à passer du dada aux images de rêve du surréalisme.',
+      carrington:
+        'Ils se rencontrèrent en 1937. Elle avait 20 ans, lui 46. La guerre les sépara : lui gagna New York, elle le Mexique.',
+    },
+  },
+  carrington: {
+    knownFor: 'L’Auberge du cheval de l’aube',
+    blurb:
+      'Surréaliste qui quitta l’Angleterre pour le Mexique, et peignit hyènes, nonnes et cuisines tirées de sa propre mythologie.',
+  },
+  wood: {
+    knownFor: 'American Gothic',
+    blurb:
+      'Le peintre d’American Gothic. Il fit de sa sœur et de son dentiste un couple austère de l’Iowa, et défendit un art du Midwest américain.',
+  },
+  mitchell: {
+    knownFor: 'City Landscape',
+    blurb:
+      'Expressionniste abstraite de la seconde génération, elle emporta le geste new-yorkais en France. Ses dernières toiles sont des paysages remémorés, non décrits.',
+  },
+  frankenthaler: {
+    knownFor: 'Montagnes et mer',
+    blurb:
+      'Elle dilua la peinture et la laissa imbiber la toile brute. Montagnes et mer, peinte à 23 ans, ouvrit la voie des drippings de Pollock aux champs de couleur.',
+    notes: {
+      pollock:
+        'Après avoir vu ses peintures noires, elle posa la toile au sol, puis l’imbiba au lieu d’y faire couler une peinture épaisse.',
+    },
+  },
+  johns: {
+    knownFor: 'Drapeau',
+    blurb:
+      'Drapeaux, cibles et chiffres, peints comme des choses que l’esprit connaît déjà. Avec Rauschenberg, il s’écarta de la confession expressionniste abstraite.',
+    notes: {
+      rauschenberg:
+        'Compagnons d’environ 1954 à 1961, dans des ateliers new-yorkais voisins. Ils firent aussi des vitrines sous le nom de Matson Jones.',
+    },
+  },
+  rauschenberg: {
+    knownFor: 'Monogram',
+    blurb:
+      'Combines de peinture, de rebuts et d’animaux empaillés. Il disait travailler dans l’écart entre l’art et la vie.',
+    notes: {
+      duchamp:
+        'Le ready-made est derrière les Combines : des objets ordinaires entrent dans le tableau sans être d’abord changés en métaphore.',
+    },
+  },
+  hockney: {
+    knownFor: 'A Bigger Splash',
+    blurb:
+      'Figure majeure du pop britannique, il partit à Los Angeles chercher la couleur. Piscines, doubles portraits et, bien plus tard, l’arrivée du printemps.',
+    notes: {
+      warhol:
+        'Lors de son premier voyage à New York en 1961, il rencontra Warhol. Trois ans plus tard, il s’installa à Los Angeles.',
+    },
+  },
+  bacon: {
+    knownFor: 'Trois études de figures au pied d’une crucifixion',
+    blurb:
+      'Né à Dublin, le peintre des papes hurlants et des figures en cage. Avec Freud, il maintint le corps au centre de la peinture britannique.',
+    notes: {
+      velazquez: 'Ses papes hurlants sont peints d’après le portrait d’Innocent X par Vélasquez.',
+      freud:
+        'Amis proches dès les années 1940, ils se peignirent l’un l’autre et se disputèrent à Soho, puis cessèrent de se parler dans les années 1980.',
+    },
+  },
+  hartung: {
+    knownFor: 'Gestes noirs calligraphiés',
+    blurb:
+      'Peintre allemand devenu français, et l’une des figures centrales de l’abstraction lyrique. Signes noirs râclés, pulvérisés et brossés.',
+    notes: {
+      bergman:
+        'Ils se marièrent en 1929, divorcèrent avant la guerre, et se remarièrent en 1957. À partir de 1973, ils partagèrent une maison et deux ateliers à Antibes.',
+    },
+  },
+  stael: {
+    name: 'Nicolas de Staël',
+    short: 'De Staël',
+    knownFor: 'Les Footballeurs',
+    blurb:
+      'Né à Saint-Pétersbourg, il construisit paysages et matchs de football en aplats de couleur, puis revint vers la figure. Il mourut à Antibes à 41 ans.',
+    notes: {
+      braque:
+        'Braque admira sa première exposition personnelle en 1944. Leurs ateliers étaient proches du parc Montsouris, et de Staël lui rendait visite à Varengeville.',
+    },
+  },
+  dubuffet: {
+    knownFor: 'Hourloupe',
+    blurb:
+      'Il nomma l’art brut en 1945 pour l’art fait hors du monde professionnel, et peignit dans cet esprit : pâte épaisse, graffiti, puis le puzzle de l’Hourloupe.',
+  },
+  fontana: {
+    knownFor: 'Concept spatial, Attentes',
+    blurb:
+      'Né en Argentine de parents italiens, il fonda le spatialisme et incisa ou perça la toile pour que le tableau s’ouvre sur l’espace réel.',
+  },
+  vasarely: {
+    knownFor: 'Zèbre',
+    blurb:
+      'Né Győző Vásárhelyi en Hongrie, il devint en France le visage public de l’op art : zèbres, grilles et sphères mouvantes.',
+  },
+  riley: {
+    knownFor: 'Mouvement en carrés',
+    blurb:
+      'Des rythmes noir et blanc qui semblent bouger. On l’étiqueta op art après The Responsive Eye en 1965, et elle passa des années à refuser ce nom.',
+    notes: {
+      seurat:
+        'En 1959, elle fit une transcription du Pont de Courbevoie de Seurat pour comprendre comment couleur et ton se comportent.',
+    },
+  },
+  klein: {
+    knownFor: 'Monochrome bleu (IKB)',
+    blurb:
+      'Un seul bleu, déposé comme International Klein Blue, et une carrière brève. Il contresigna la déclaration du Nouveau Réalisme dans son propre appartement.',
+    notes: {
+      raysse:
+        'Le 27 octobre 1960, Raysse était parmi les neuf signataires de la déclaration fondatrice, chez Klein.',
+    },
+  },
+  niki: {
+    name: 'Niki de Saint Phalle',
+    short: 'Niki',
+    knownFor: 'Nanas',
+    blurb:
+      'Elle rejoignit les Nouveaux Réalistes en 1961 avec ses tirs, puis construisit les Nanas dansantes et le Jardin des Tarots.',
+    notes: {
+      johns:
+        'Johns et Rauschenberg prirent part à Feu à volonté, son tir de 1961 à la galerie J, à Paris.',
+      rauschenberg:
+        'Le même soir : ils tirèrent sur des poches de peinture cachées dans le plâtre, pour que le tableau se peigne lui-même.',
+    },
+  },
+  polke: {
+    knownFor: 'Les êtres supérieurs ont commandé',
+    blurb:
+      'Né à Oels, alors en Allemagne. Avec Richter et Konrad Lueg, il nomma le réalisme capitaliste en 1963, puis peignit sur tissus imprimés, produits chimiques et plaisanteries.',
+    notes: {
+      richter:
+        'En 1963, à Düsseldorf, avec Konrad Lueg, ils prirent le nom de réalisme capitaliste : une réponse ironique au réalisme socialiste comme aux marchandises occidentales.',
+    },
+  },
+  baselitz: {
+    knownFor: 'Les Grands Amis',
+    blurb:
+      'Né Hans-Georg Kern à Deutschbaselitz. À partir de 1969, il peignit le motif à l’envers, pour que la figure soit d’abord vue comme peinture.',
+  },
+  clemente: {
+    knownFor: 'Les Quatorze Stations',
+    blurb:
+      'L’un des peintres de la Transavanguardia italienne. Autoportraits, miniatures indiennes et un corps qui ne reste pas dans un seul style.',
+    notes: {
+      basquiat:
+        'En 1984, leur marchand Bruno Bischofberger fit passer à Clemente, Basquiat et Warhol quinze toiles d’atelier en atelier.',
+      warhol:
+        'Warhol sérigraphia ; Clemente et Basquiat peignirent par-dessus lui, et l’un par-dessus l’autre.',
+    },
+  },
+  combas: {
+    knownFor: 'Batailles de bande dessinée',
+    blurb:
+      'Avec Hervé Di Rosa, il donna ses images à la figuration libre : contours criards, comics, rock et bagarres.',
+  },
+  haring: {
+    knownFor: 'Radiant Baby',
+    blurb:
+      'Dessins à la craie dans le métro de New York, puis tout un alphabet de bébés rampants, de chiens et de danseurs. Il mourut du sida à 31 ans.',
+    notes: {
+      basquiat:
+        'Ils émergèrent dans la même scène du centre-ville. Haring écrivit plus tard que Basquiat et Warhol peignaient comme on converse.',
+      warhol:
+        'Haring était un habitué de la Factory et vit se faire les toiles communes de 1984-1985.',
+    },
+  },
+  rauch: {
+    knownFor: 'Vater',
+    blurb:
+      'Le peintre central de la Nouvelle école de Leipzig. Usines, uniformes et logique de rêve, peints comme si le réalisme socialiste s’était endormi.',
+  },
+  murakami: {
+    knownFor: 'Fleurs et Mr. DOB',
+    blurb:
+      'Il nomma le Superflat en 2000 : anime, produits de luxe et atelier-usine. Fleurs souriantes, et Mr. DOB aux dents pointues.',
+    notes: {
+      warhol:
+        'Il a souvent cité la Factory de Warhol comme modèle d’un atelier qui mêle peinture, produits dérivés et assistants.',
+    },
+  },
+  hirst: {
+    knownFor: 'L’Impossibilité physique de la mort dans l’esprit d’un vivant',
+    blurb:
+      'Il organisa Freeze en 1988 et devint le visage public des Young British Artists. Un requin dans le formol, et les peintures de pois.',
   },
 
 }

@@ -1,6 +1,6 @@
 # Atelier
 
-A museum-style family tree of painting: 118 artists from Giotto to Basquiat, arranged in eight gallery rooms, each with its own wall colour.
+A museum-style family tree of painting: 149 artists from Giotto to Hirst, arranged in eight gallery rooms, each with its own wall colour.
 
 **Live site:** https://knalpas.github.io/atelier/
 
