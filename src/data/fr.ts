@@ -67,12 +67,19 @@ export const FR_ROOMS: Record<RoomId, { title: string; short: string; span: stri
     intro:
       'Après la guerre, le centre de gravité se déplace à New York. L’abstraction, puis le pop, puis la rue.',
   },
-  present: {
-    title: 'Notre temps',
-    short: 'Notre temps',
-    span: 'v. 1945 – aujourd’hui',
+  latemodern: {
+    title: 'Modernisme tardif',
+    short: 'Modernisme',
+    span: 'v. 1945 – 1975',
     intro:
-      'L’Europe répond à New York avec ses propres voix : le noir comme lumière, la chair comme fait, et le retour de la figure sous bien des noms.',
+      'Après la guerre, le modernisme européen se divise en courants nommés : l’abstraction gestuelle à Paris, l’abstraction lyrique à ses côtés, et à Londres un retour sans pitié au corps.',
+  },
+  contemporary: {
+    title: 'Contemporain',
+    short: 'Contemporain',
+    span: 'v. 1960 – aujourd’hui',
+    intro:
+      'Des mouvements nommés s’emparent de la société de consommation, de la photographie et du récit, puis la peinture postmoderne ramène le mythe dans l’atelier.',
   },
 }
 
@@ -122,9 +129,9 @@ export const FR_MOVEMENTS: Record<string, string> = {
   'School of London': 'École de Londres',
   'Nouveau Réalisme': 'Nouveau réalisme',
   'Figuration Narrative': 'Figuration narrative',
-  'Contemporary Figuration': 'Figuration contemporaine',
-  'Nordic Abstraction': 'Abstraction nordique',
-  'Contemporary Painting': 'Peinture contemporaine',
+  'Lyrical Abstraction': 'Abstraction lyrique',
+  'Capitalist Realism': 'Réalisme capitaliste',
+  Postmodernism: 'Postmodernisme',
 }
 
 export const FR_COUNTRIES: Record<string, string> = {
@@ -1003,7 +1010,7 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
   bergman: {
     knownFor: 'Horizons d’or et d’argent',
     blurb:
-      'Peintre abstraite norvégéo-suédoise des horizons, des montagnes et de la lumière métallique, et l’épouse de Hans Hartung. Longtemps éclipsée, aujourd’hui centrale dans le modernisme nordique.',
+      'Peintre norvégienne, née à Stockholm et élevée en Norvège, devenue ensuite française. Avec Hans Hartung, elle a contribué à l’abstraction lyrique : horizons, montagnes et lumière métallique.',
   },
   soulages: {
     knownFor: 'Outrenoir',
@@ -1027,7 +1034,7 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
   richter: {
     knownFor: 'Abstrakte Bilder',
     blurb:
-      'Toujours à l’œuvre : peintures d’après photo, nuanciers et vastes abstractions à la raclette. Il demande encore ce que la peinture peut faire.',
+      'Cofondateur du réalisme capitaliste en 1963, aux côtés de Polke. Il a ensuite peint d’après photo, des nuanciers et de vastes abstractions à la raclette.',
   },
   raysse: {
     knownFor: 'Made in Japan – La Grande Odalisque',
@@ -1046,7 +1053,7 @@ export const FR_ARTISTS: Record<string, FrArtist> = {
     short: 'Garouste',
     knownFor: 'Tableaux mythologiques et bibliques',
     blurb:
-      'Figure majeure de la figuration française depuis les années 1980. Il peignit mythes, Écritures et ânes d’une main classique et inquiète.',
+      'Peintre figuratif postmoderne, en dehors des groupes des années 1980. Il peint mythes, Écritures et ânes d’une main classique et inquiète.',
   },
 
 }

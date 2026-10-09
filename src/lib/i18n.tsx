@@ -186,7 +186,8 @@ const ROOM_SHORT_EN: Record<string, string> = {
   modernlife: 'Impressionism',
   avantgarde: 'Avant-Garde',
   american: 'America',
-  present: 'Our Time',
+  latemodern: 'Modernism',
+  contemporary: 'Contemporary',
 }
 
 const en: Text = {

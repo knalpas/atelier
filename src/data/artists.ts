@@ -2165,10 +2165,10 @@ export const artists: Artist[] = [
     country: 'Sweden',
     lat: 59.33,
     lon: 18.07,
-    movement: 'Nordic Abstraction',
+    movement: 'Lyrical Abstraction',
     knownFor: 'Gold and silver horizon paintings',
     blurb:
-      'A Norwegian–Swedish abstract painter of horizons, mountains and metallic light, and the wife of Hans Hartung. Long overshadowed, now central to Nordic modernism.',
+      'A Norwegian painter, born in Stockholm and raised in Norway, who later became a French citizen. With Hans Hartung she helped shape lyrical abstraction: horizons, mountains and metallic light.',
   },
   {
     id: 'soulages',
@@ -2236,10 +2236,10 @@ export const artists: Artist[] = [
     country: 'Germany',
     lat: 51.05,
     lon: 13.74,
-    movement: 'Contemporary Painting',
+    movement: 'Capitalist Realism',
     knownFor: 'Abstrakte Bilder',
     blurb:
-      'Still working: photo-paintings, colour charts and vast squeegeed abstractions. He keeps asking what painting can still do.',
+      'A founder of Capitalist Realism in 1963, alongside Polke. He went on to photo-paintings, colour charts and vast squeegeed abstractions.',
     influences: ['duchamp', 'velazquez'],
   },
   {
@@ -2289,10 +2289,10 @@ export const artists: Artist[] = [
     country: 'France',
     lat: 48.86,
     lon: 2.35,
-    movement: 'Contemporary Figuration',
+    movement: 'Postmodernism',
     knownFor: 'Mythological and biblical tableaux',
     blurb:
-      'A major figure of French figuration since the 1980s. He paints myths, scripture and donkeys in a restless, classical hand.',
+      'A postmodern figurative painter, outside the groups of the 1980s. He paints myths, scripture and donkeys in a restless, classical hand.',
     influences: ['picasso', 'el-greco'],
   },
 ]
